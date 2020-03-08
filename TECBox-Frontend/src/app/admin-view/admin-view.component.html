@@ -1,0 +1,35 @@
+<button (click)="onChageView('gestion_roles','Roles')" type="button" class="btn btn-primary">Gestión de roles</button>
+<button (click)="onChageView('gestion_sucursales','Sucursales')" type="button" class="btn btn-primary">Gestión de sucursales</button>
+<button (click)="onChageView('gestion_trabajadores','Trabajadores')" type="button" class="btn btn-primary">Gestión de trabajadores</button>
+<button (click)="onChageView('gestion_vendedores','Vendedores')" type="button" class="btn btn-primary">Gestión de vendedores</button>
+<button (click)="onChageView('gestion_productos','Productos')" type="button" class="btn btn-primary">Gestión de productos</button>
+<button (click)="onChageView('gestion_rutas','Rutas')" type="button" class="btn btn-primary">Gestión de rutas</button>
+
+<div class="container">
+  <h1>{{title}}</h1>
+  <ul class="list-group"  *ngIf="items">
+    <li
+      *ngFor="let item of items"
+      class="list-group-item">
+      <div>
+        <button (click)="selectItem(item)" type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+        <button (click)="deleteItem(item)" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+        {{item['nombre']}}{{item['nombre_completo']}}{{item['distritos']}}
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div>
+        <button (click)="newItem()" type="button" class="btn btn-primary"><i class="fas fa-plus"></i></button>
+      </div>
+    </li>
+  </ul>
+  <div *ngIf="selectedItem" class="container">
+    <h2>Detalles</h2>
+    <div class="form-group" *ngFor="let attr of selectedItem">
+      <label for="item1">{{attr[0]}}</label>
+      <input type="text" class="form-control" id="item1" value="{{attr[1]}}">
+    </div>
+    <button type="button" class="btn btn-success" (click)="onConfirm()"><i class="fas fa-check"></i></button>
+    <button type="button" class="btn btn-danger" (click)="onConfirm()"><i class="fas fa-window-close"></i></button>
+  </div>
+</div>
