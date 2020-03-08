@@ -1,2 +1,22 @@
-<p>HOLAAA</p>
+<!-- Navigation bar -->
+
+<nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-inverse">
+<div class="container collapse navbar-collapse">
+  <a class="navbar-brand" href="#">TECBox</a>
+    <ul class="nav navbar-nav mr-auto my-2" routerLinkActive="active">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="cliente"> Cliente <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item"><a class="nav-link" routerLink="bodeguero">Bodeguero</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="reportes">Reportes</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="administrador">Administrador</a></li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn my-2 my-sm-0 myBtn" type="submit">Search</button>
+    </form>
+</div>
+</nav>
+
 <router-outlet></router-outlet>
+
