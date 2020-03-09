@@ -130,7 +130,8 @@
         "distritos": "UwUx3"
       }
     ]
-  },  "gestion_paquetes": {
+  },
+  "gestion_paquetes": {
     "data": [
       {
         "ID": "001",
@@ -138,7 +139,7 @@
         "Description": "Feo",
         "ArrivalDate": "Hoy"
       },
-      {    
+      {
         "ID": "002",
         "Client": "Maggie",
         "Description": "Bebe",

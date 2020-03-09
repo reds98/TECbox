@@ -1,1 +1,28 @@
-<p>cellar-view works!</p>
+<div>
+  <h1>
+    GrocerView
+  </h1>
+
+  <table class="table table-striped" *ngIf="productArray.gestion_paquetes.data">
+    <!-- ADD HEADERS -->
+    <tr>
+      <th scope="col">Tracking ID</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Fecha estimada de entrega</th>
+      <th scope="col">Acciones</th>
+    </tr>
+
+    <!-- BIND ARRAY TO TABLE -->
+    <tr *ngFor="let product of productArray.gestion_paquetes.data">
+      <td>{{product.ID}}</td>
+      <td>{{product.Client}}</td>
+      <td>{{product.Description}}</td>
+      <td>{{product.ArrivalDate}}</td>
+      <td>
+        <button class="btn"><i class="fa fa-trash"></i></button>
+        <button class="btn"><i class="fa fa-edit"></i></button>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GrocerComponent } from './grocer/grocer.component';
 import {AdminViewComponent} from './admin-view/admin-view.component';
 
-const routes: Routes = [
-  { path: 'grocer', component: GrocerComponent },
-];
 
 const routes: Routes = [
   // { path: 'admin-view', component: AdminViewComponent },
