@@ -7,7 +7,7 @@ namespace sellers.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class sellersController: ControllerBase
+    public class sellerController: ControllerBase
     {
         private static List<sellers> Glossary = new List<sellers> {
             new sellers
@@ -24,7 +24,7 @@ namespace sellers.Controllers
             new sellers
             {
                 id= "1091019019019",
-                name="Elias"
+                name="elias"
             }
 
         };
