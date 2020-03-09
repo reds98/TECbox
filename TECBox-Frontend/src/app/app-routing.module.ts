@@ -4,7 +4,12 @@ import {AdminViewComponent} from './admin-view/admin-view.component';
 
 
 const routes: Routes = [
-  { path: '', component: AdminViewComponent },
+  // { path: 'admin-view', component: AdminViewComponent },
+  { path: 'admin-view', loadChildren: () => import('./admin-view/admin-view.module').then(m => m.AdminViewModule) },
+  { path: 'report-view', loadChildren: () => import('./report-view/report-view.module').then(m => m.ReportViewModule) },
+  { path: 'cellar-view', loadChildren: () => import('./cellar-view/cellar-view.module').then(m => m.CellarViewModule) },
+  { path: 'client-view', loadChildren: () => import('./client-view/client-view.module').then(m => m.ClientViewModule) },
+
 ];
 
 @NgModule({
