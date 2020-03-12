@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { TableComponent } from '../table/table.component';
 
 @Component({
   selector: 'app-cellar-view',
