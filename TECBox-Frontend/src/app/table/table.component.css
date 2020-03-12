@@ -1,0 +1,28 @@
+.myBtn{
+    background-color: #B8D3D9;
+    border: 1px solid #B8D3D9;
+}
+
+.myBtn:hover {
+    background-color: #194056;
+    color: #B8D3D9;
+}
+
+.myBtn2{
+    color: #B8D3D9;
+    background-color: #194056;
+    border: 1px solid #194056;
+}
+
+.myBtn2:hover {
+    background-color: #B8D3D9;
+    color: #194056;
+}
+.ml-1 {
+    margin-left: 1 !important;
+    margin-right: 1 !important;
+}
+
+.myModal{
+    color: black;
+}

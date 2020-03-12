@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { TableComponent } from '../table/table.component';
 
 @Component({
   selector: 'app-cellar-view',
@@ -10,17 +11,9 @@ export class CellarViewComponent implements OnInit {
 
   constructor(private httpService: HttpClient) { }
 
-  productArray;
 
   ngOnInit(): void {
-    this.httpService.get('assets/TestJson.json').subscribe(
-      data => {
-        this.productArray = data;	 // FILL THE ARRAY WITH DATA.
-      },
-      (err: HttpErrorResponse) => {
-        console.log (err.message);
-      }
-    );
-  }
 
+
+  }
 }
