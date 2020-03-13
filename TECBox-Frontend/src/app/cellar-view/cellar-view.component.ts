@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
@@ -10,9 +10,11 @@ export class CellarViewComponent implements OnInit {
 
   constructor(private httpService: HttpClient) { }
 
+  columnsParent = ["Id", "Cliente", "Descripción", "Entrega", "Acciones"];
 
   ngOnInit(): void {
 
-
   }
+
+
 }

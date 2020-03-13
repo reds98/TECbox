@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -23,7 +23,7 @@ export class TableComponent implements OnInit {
   objectValues = Object.values;
   objectKeys = Object.keys;
 
-  columns = ["Id", "Cliente", "Descripción", "Entrega", "Acciones"];
+  @Input() columns = null;
 
   data = {
     "gestion_roles": {
@@ -200,8 +200,6 @@ export class TableComponent implements OnInit {
 
     $(document).ready(function () {
       $('#cellerTable').DataTable( {
-        "lengthChange": false,
-        "info": false
       });
       });
 
@@ -300,4 +298,5 @@ export class TableComponent implements OnInit {
     }
 
   }
+
 }
