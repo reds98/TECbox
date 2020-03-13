@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-cellar-view',
