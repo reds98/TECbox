@@ -10,7 +10,7 @@ export class CellarViewComponent implements OnInit {
 
   constructor(private httpService: HttpClient) { }
 
-  columnsParent = ["Id", "Cliente", "Descripción", "Entrega", "Acciones"];
+  columnsParent = ["Id", "Cliente", "Descripción", "Entrega"];
 
   ngOnInit(): void {
 

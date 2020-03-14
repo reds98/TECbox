@@ -16,26 +16,23 @@
             <!-- BIND ARRAY TO TABLE -->
             <tr *ngFor="let product of productArray" id="row">
                 <td *ngFor="let attribute of objectValues(product)">{{attribute}}</td>
-                <td>
-                    <button (click)="deleteItem(product)" type="button" class="btn myBtn ml-1" id="deleteBtn"
-                    data-toggle="popover" title="Eliminar" data-content="Si elimina este elemento, no podrá recuperarlo">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                    <button type="button" (click)="editItem()" class="btn myBtn ml-1" data-toggle="popover" title="Editar"
-                    data-content="¿Desea editar este elemento?">><i class="fa fa-edit" id="editBtn"></i></button>
-                </td>
-                
             </tr>
         </tbody>
     </table>
 
 
     <div>
+        <button type="button" class="btn myBtn ml-1" id="deleteBtn"
+        data-toggle="popover" title="Eliminar" data-content="Si elimina este elemento, no podrá recuperarlo">
+            <i class="fa fa-trash"></i>
+        </button>
+        <button type="button" (click)="editItem()" class="btn myBtn ml-1" data-toggle="popover" title="Editar"
+        data-content="¿Desea editar este elemento?">><i class="fa fa-edit" id="editBtn"></i></button>
         <button (click)="newItem()" type="button" class="btn btn-primary btn_new_row"><i class="fa fa-plus"></i></button>
         <button (click)="saveEdit()" type="button" class="btn btn-primary" id="saveBtn" style="display: none;"><i class="fa fa-save"></i></button>
     </div>
 
-    <div *ngIf="selectedItem" class="container">
+    <div *ngIf="newProduct" class="container">
         <h2>Detalles</h2>
 
 

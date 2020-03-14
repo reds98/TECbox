@@ -16,6 +16,7 @@ export class TableComponent implements OnInit {
 
   constructor(private httpService: HttpClient) { }
   
+  // Attributes
   productArray;
   selectedItem;
   newProduct;
@@ -23,6 +24,7 @@ export class TableComponent implements OnInit {
   objectValues = Object.values;
   objectKeys = Object.keys;
 
+  // Child attribute
   @Input() columns = null;
 
   data = {
@@ -192,56 +194,80 @@ export class TableComponent implements OnInit {
     }
   }
   
-
+  // Runs first
   ngOnInit () {
     this.selectedItem = null;
     this.productArray = null;
     this.productArray = this.data['gestion_paquetes']['data'];
 
-    $(document).ready(function () {
+    this.initTable();
+    this.selectItems();
+    this.deleteItems();
+    this.initPopovers()
+    }
+
+
+  // Initializes Data table structure 
+  initTable(){
+    $(document).ready(function() {
       $('#cellerTable').DataTable( {
-      });
-      });
-
-      
-
-    $(document).ready(function(){
-      $('[data-toggle="popover"]').popover({
-          placement : 'left',
-          trigger : 'hover'
-      });
-    });
+        
+      } );
+    } );
+  }
     
-    $("#saveBtn").attr('visible', 'false');
+  // Method for selecting rows in table
+  selectItems(){
+    $(document).ready(function() {
+      var table = $('#cellerTable').DataTable();
+    
+      $('#cellerTable tbody').on( 'click', 'tr', function () {
+          if ( $(this).hasClass('selected') ) {
+              $(this).removeClass('selected');
+          }
+          else {
+              table.$('tr.selected').removeClass('selected');
+              $(this).addClass('selected');
+          }
+      } );
+  } );
+  }
 
+  // Deletes selected row
+  deleteItems(){
+    $('#deleteBtn').click( function () {
+      $('#cellerTable').DataTable().row('.selected').remove().draw( false );
+  } );
+  }
+
+  // Initializes popovers
+  initPopovers(){ 
+      $(document).ready(function(){
+        $('[data-toggle="popover"]').popover({
+            placement : 'left',
+            trigger : 'hover'
+        });
+      });
+      
+      $("#saveBtn").attr('visible', 'false');
 
     }
 
 
-  deleteItem(selectedItem):void{
-    this.productArray = this.productArray.filter(item => selectedItem !== item);
-    this.selectedItem = null;
-    $(".popover").remove();
-
-    $("#deleteBtn2").parents("tr").remove();
-        
-  }
-
-
-  selectItem (selectedItem) {
-    this.selectedItem = Object.entries(selectedItem);
-  }
-
+  // Opens form for submiting new product
   newItem():void{
-    this.selectedItem = Object.entries(this.productArray[0]).map(item=>{return [this.productArray[0],""]});
+  this.selectedItem = Object.entries(this.productArray[0]).map(item=>{return [this.productArray[0],""]});
+  this.newProduct = true;
   }
 
+  // Enables editing of rows
   editItem(){
     $("#cellerTable").closest('div').attr('contenteditable', 'true');
     $("#cellerTable").closest('div').focus();
     $("#saveBtn").show();
   }
 
+  // Disenables editing of rows
   saveEdit(){
     $("#cellerTable").closest('div').attr('contenteditable', 'false');
     $("#saveBtn").hide();              
@@ -251,9 +277,9 @@ export class TableComponent implements OnInit {
         .rows()
         .invalidate()
         .draw();
-
   }
 
+  // Creates form
   userForm = new FormGroup({
 	ID: new FormControl(),
 	Client: new FormControl(),
@@ -261,42 +287,26 @@ export class TableComponent implements OnInit {
   ArrivalDate: new FormControl()
   });
   
+  // Submit button function
   onFormSubmit(): void {
-    this.addProduct([this.userForm.get('ID').value, this.userForm.get('Client').value, this.userForm.get('Description').value,this.userForm.get('ArrivalDate').value, ""], 0)
+    this.addProduct([this.userForm.get('ID').value, this.userForm.get('Client').value, this.userForm.get('Description').value,this.userForm.get('ArrivalDate').value], 0)
   }
 
+  // Sets a default value for the new product
   setDefaultValue() { 
     this.userForm.setValue({ID: 1234, Client: 'Cliente1', Description: 'Grande', ArrivalDate: 'ayer'});
   }
 
+  // Adds new product to the table
   addProduct(list, i){
-    
+
     var table = (<HTMLTableElement>document.getElementById('cellerTable'));
 
-    
-    var deleteButton = document.createElement('button');
-    deleteButton.classList.add("btn");
-    deleteButton.innerHTML = '<button><i class="fa fa-trash"></i></button>'
-    deleteButton.id="deleteBtn2";
-    deleteButton.addEventListener("click", (e:Event) => this.deleteItem(this.selectItem));
-    
-    var editButton = document.createElement('button');
-    editButton.classList.add("btn");
-    editButton.innerHTML = '<button><i class="fa fa-edit"></i></button>'
-    editButton.id="editBtn2";
-    editButton.addEventListener("click", (e:Event) => this.editItem());
-
     var row = table.insertRow(-1);
-    while(i < 5){
+    while(i < 4){
     var cell = row.insertCell(i);
     cell.innerHTML = list[i];
-    if(i == 4){
-      cell.append(deleteButton);
-      cell.append(editButton); 
-    }
     i++;
     }
-
   }
-
 }
