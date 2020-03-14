@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormControl, FormGroup} from '@angular/forms';
 
 declare var $;
 
