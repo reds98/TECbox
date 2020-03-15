@@ -15,7 +15,12 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     CellarViewRoutingModule,
-    SharedModule,
+<<<<<<<<< Temporary merge branch 1
+    FormsModule,
+    ReactiveFormsModule
+=========
+    SharedModule
+>>>>>>>>> Temporary merge branch 2
   ]
 })
 export class CellarViewModule { }
