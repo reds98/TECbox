@@ -2,9 +2,19 @@
   <h1>
     GrocerView
   </h1>
-
-
   <div>
-    <app-table></app-table>
+    <app-table [data] = "dataParent" [columns] = "columnsParent" #cellerTable></app-table>
+  </div>
+</div>
+
+<div class="container">
+  <h1>
+    Digite el número de traqueo que desea consultar.
+  </h1>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="#12345" aria-describedby="button-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+    </div>
   </div>
 </div>

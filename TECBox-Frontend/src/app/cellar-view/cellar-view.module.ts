@@ -6,17 +6,16 @@ import { CellarViewRoutingModule } from './cellar-view-routing.module';
 import { CellarViewComponent } from './cellar-view.component';
 import { TableComponent } from '../table/table.component';
 import {AdminViewRoutingModule} from '../admin-view/admin-view-routing.module';
+import { SharedModule } from '../shared/shared.module';
+
 
 @NgModule({
   declarations: [
-    CellarViewComponent,
-    TableComponent
+    CellarViewComponent
   ],
   imports: [
     CommonModule,
-    CellarViewRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    CellarViewRoutingModule
   ]
 })
 export class CellarViewModule { }
