@@ -10,7 +10,6 @@ export class HomeViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("CACA");
   }
 
 }
