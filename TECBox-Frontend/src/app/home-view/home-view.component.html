@@ -6,14 +6,25 @@
       <p class="name">{{ product.nombre }}</p>
       <p class="descripcion"> Descripción: {{ product.descripcion }}</p>
       <p class="vendedor">Vendedor: {{ product.vendedor }}</p>
-      <p class="precio_compra">Precio: {{ product.precio_compra }} + {{ product.impuesto}} i.v.</p>
+      <p class="precio_compra">Precio: {{ product.precio_compra }}$ {{ product.impuesto}} i.v.</p>
       <p class="descuento">Descuento: {{ product.descuento }}</p>
-      <button align="right" class="btn myBtn" type="button" 
+      <button align="right" class="btn myBtn" type="button" data-toggle="modal" data-target="#confirmModal"
       (click) = "addToCart([product.precio_compra, product.descuento, product.impuesto])">Añadir al carrito</button>
     </div> 
   </li>
 </ul>
 
-<button align="right" class="btn myBtn" type="button" 
-(click) = "calcPurchaseTotal()">Comprar</button>
+<button align="right" class="btn myBtn" type="button" (click) = "calcPurchaseTotal()">Comprar</button>
 
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog myModal" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">¡Agregado al carrito!</h5>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn myBtn" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
