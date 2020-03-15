@@ -12,6 +12,27 @@ export class CellarViewComponent implements OnInit {
 
   columnsParent = ["Id", "Cliente", "Descripción", "Entrega"];
 
+  dataParent = [
+    {
+      "ID": "001",
+      "Client": "Homero",
+      "Description": "Feo",
+      "ArrivalDate": "Hoy"
+    },
+    {    
+      "ID": "002",
+      "Client": "Maggie",
+      "Description": "Bebe",
+      "ArrivalDate": "Dos meses"
+    },
+    {
+      "ID": "003",
+      "Client": "Bart",
+      "Description": "Cool",
+      "ArrivalDate": "Ayer"
+    }
+  ];
+  
   ngOnInit(): void {
 
   }
