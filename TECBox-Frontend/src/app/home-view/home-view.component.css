@@ -10,8 +10,9 @@ li {
     background: rgb(238, 238, 238);
     padding: 1em;
     margin-right: 10px;
+    min-height: 240px;
     width: 20%;
-    height: 200px;
+    height: 15%;
     margin-bottom: 1em;
     display: flex;
     flex-direction: column;
@@ -19,7 +20,8 @@ li {
 }
 
 p {
-    margin: 0;
+    padding-top: 8px;
+    margin: 1px;
     font-size: .8rem;
     flex-grow: 1;
 }
@@ -34,9 +36,25 @@ p.name {
     margin-left:0.3em;
     width:8em;
     height:8em;
+    
+    flex-grow: 1;
     }
 
 #image  {
     float: right;    
-        margin: 0 0 0 15px;
+    margin: 0 0 0 15px;
+    flex-grow: 1;
     }
+
+.myBtn{
+    background-color: #B8D3D9;
+    border: 1px solid #B8D3D9;
+    align-self: right;
+    position: absolute;
+    flex-grow: 1;
+}
+
+.myBtn:hover {
+    background-color: #194056;
+    color: #B8D3D9;
+}
