@@ -1,7 +1,5 @@
-import { NgModule, enableProdMode } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
 import { ReportViewRoutingModule } from './report-view-routing.module';
 import { ReportViewComponent } from './report-view.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,4 +14,5 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
   ]
 })
-export class ReportViewModule { }
+
+export class ReportViewModule {}

@@ -6,6 +6,10 @@ import {HttpClient} from '@angular/common/http';
   templateUrl: './admin-view.component.html',
   styleUrls: ['./admin-view.component.css']
 })
+
+/**
+ * Supplies configuration of administrator view
+ */
 export class AdminViewComponent implements OnInit {
 
   items;

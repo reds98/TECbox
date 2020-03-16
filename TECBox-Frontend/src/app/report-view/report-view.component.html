@@ -1,1 +1,6 @@
-<p>CACA</p>
+<ul>
+  <li *ngFor="let item of items">
+    <p> Nombre: {{item['name']}}  Provincia: {{item['province']}}  Distrito: {{item['distrit']}}
+       Numbero de celular: {{item['phone_number']}}  Encargado: {{item['manager']}}</p>
+  </li>
+</ul>
