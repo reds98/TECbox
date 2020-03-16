@@ -2,13 +2,15 @@
 
 <ul *ngIf="products">
   <li *ngFor="let product of products">
-    <p class="name">{{ product.nombre }}</p>
-    <p class="descripcion">{{ product.descripcion }}</p>
-    <p class="codigo_barras">{{ product.codigo_barras}}</p>
-    <p class="vendedor">{{ product.vendedor }}</p>
-    <p class="precio_compra">{{ product.precio_compra }}</p>
-    <p class="impuesto">{{ product.impuesto}}</p>
-    <p class="descuento">{{ product.descuento }}</p>
+    <div><img  style="float: right; margin: 0px 0px 15px 15px;" class="size" [src]="product.imagen" id="image"/>
+      <p class="name">{{ product.nombre }}</p>
+      <p class="descripcion"> Descripción: {{ product.descripcion }}</p>
+      <p class="codigo_barras">Código de Barras: {{ product.codigo_barras}}</p>
+      <p class="vendedor">Vendedor: {{ product.vendedor }}</p>
+      <p class="precio_compra">Precio: {{ product.precio_compra }}</p>
+      <p class="impuesto">Impuesto: {{ product.impuesto}}</p>
+      <p class="descuento">Descuento: {{ product.descuento }}</p>
+    </div> 
   </li>
 </ul>
 
