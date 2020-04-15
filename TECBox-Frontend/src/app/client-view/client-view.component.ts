@@ -9,38 +9,38 @@ export class ClientViewComponent implements OnInit {
 
   constructor() { }
   
-  columnsParent = ["Cédula", "Nombre", "Correo Electrónico", "Casillero", "Teléfono", "Celular", "Dirección de Entrega", "Usuario"];
+  columnsParent = ["Cedula", "Nombre", "Correo Electrónico", "Casillero", "Teléfono", "Celular", "Dirección de Entrega", "Usuario"];
 
   dataParent = [
       {
-        "numero_cedula": "456",
-        "nombre_completo": "bob esponja",
-        "correo": "bob@gmail.com",
-        "casillero": "123",
-        "telefono_casa": "24568586",
-        "celular": "85645856",
-        "direccion_entrega": "Calle Wallaby",
-        "usuario": "bobEsponja123"
+        "Cedula": "456",
+        "Nombre": "bob esponja",
+        "Correo Electrónico": "bob@gmail.com",
+        "Casillero": "123",
+        "Teléfono": "24568586",
+        "Celular": "85645856",
+        "Dirección de Entrega": "Calle Wallaby",
+        "Usuario": "bobEsponja123"
       },
       {
-        "numero_cedula": "7876",
-        "nombre_completo": "koko",
-        "correo": "koko@gmail.com",
-        "casillero": "124",
-        "telefono_casa": "24545586",
-        "celular": "85645856",
-        "direccion_entrega": "TEC",
-        "usuario": "koko123"
+        "Cedula": "7876",
+        "Nombre": "koko",
+        "Correo Electrónico": "koko@gmail.com",
+        "Casillero": "124",
+        "Teléfono": "24545586",
+        "Celular": "85645856",
+        "Dirección de Entrega": "TEC",
+        "Usuario": "koko123"
       },
       {
-        "numero_cedula": "4856",
-        "nombre_completo": "Arenita",
-        "correo": "arena@gmail.com",
-        "casillero": "275",
-        "telefono_casa": "78788586",
-        "celular": "85645856",
-        "direccion_entrega": "Uwu",
-        "usuario": "arena123"
+        "Cedula": "4856",
+        "Nombre": "Arenita",
+        "Correo Electrónico": "arena@gmail.com",
+        "Casillero": "275",
+        "Teléfono": "78788586",
+        "Celular": "85645856",
+        "Dirección de Entrega": "Uwu",
+        "Usuario": "arena123"
       }
     ];
 

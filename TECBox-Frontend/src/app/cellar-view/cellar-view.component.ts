@@ -11,26 +11,26 @@ export class CellarViewComponent implements OnInit {
 
   constructor(private httpService: HttpClient) { }
 
-  columnsParent = ["Id", "Cliente", "Descripción", "Entrega"];
+  columnsParent = ["ID", "Cliente", "Descripción", "Fecha de Entrega"];
 
   dataParent = [
     {
       "ID": "001",
-      "Client": "Homero",
-      "Description": "Feo",
-      "ArrivalDate": "Hoy"
+      "Cliente": "Homero",
+      "Descripción": "Feo",
+      "Fecha de Entrega": "Hoy"
     },
     {    
       "ID": "002",
-      "Client": "Maggie",
-      "Description": "Bebe",
-      "ArrivalDate": "Dos meses"
+      "Cliente": "Maggie",
+      "Descripción": "Bebe",
+      "Fecha de Entrega": "Dos meses"
     },
     {
       "ID": "003",
-      "Client": "Bart",
-      "Description": "Cool",
-      "ArrivalDate": "Ayer"
+      "Cliente": "Bart",
+      "Descripción": "Cool",
+      "Fecha de Entrega": "Ayer"
     }
   ];
   

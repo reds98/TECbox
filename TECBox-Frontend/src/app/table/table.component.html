@@ -32,21 +32,20 @@
         <button (click)="saveEdit()" type="button" class="btn myBtn ml-2" id="saveBtn" style="display: none;"><i class="fa fa-save"></i></button>
     </div>
 
-    <div *ngIf="newProduct" class="container">
+    <div *ngIf="newProduct" class="container ml-2">
         <h2>Detalles</h2>
 
-
-        <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+        <form [formGroup]="userForm">
             <div class="form-group" *ngFor="let attribute of objectKeys(productArray[0])">
-              {{attribute}}: <input formControlName={{attribute}} placeholder={{attribute}} type="text">
+              <input formControlName={{attribute}} placeholder={{attribute}} type="text">
             </div>
-
+        
             <div>
-              <button class="btn myBtn" type="submit">Agregar</button>
-              <button class="btn myBtn" type="button" (click) = "setDefaultValue()">Datos por defecto</button>	
+                <div *ngIf="emptyField" style="color:red" >Todos los campos son obligatorios.</div>
+              <button (click)=checkForm() class="btn myBtn" type="button">Agregar</button>	
             </div>
            </form>
-
     </div>
-    
 </div>
+
+
