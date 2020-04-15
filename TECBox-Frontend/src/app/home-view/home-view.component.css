@@ -52,8 +52,8 @@ p.name {
 }
 
 .myBtn:hover {
-    background-color: #D2B9C4;
-    color: rgb(0, 0, 0);
+    background-color: #194056;
+    color: #FFFFFF;
 }
 
 .editBtn{
@@ -64,8 +64,8 @@ p.name {
 }
 
 .editBtn:hover {
-    background-color: #D2B9C4;
-    color: rgb(0, 0, 0);
+    background-color: #194056;
+    color: #FFFFFF;
 }
 
 .deleteBtn{
@@ -76,6 +76,6 @@ p.name {
 }
 
 .deleteBtn:hover {
-    background-color: #D2B9C4;
-    color: rgb(0, 0, 0);
+    background-color: #194056;
+    color: #FFFFFF;
 }

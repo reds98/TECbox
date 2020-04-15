@@ -5,8 +5,8 @@
 }
 
 .myBtn:hover {
-    background-color: #D2B9C4;
-    color: rgb(0, 0, 0);
+    background-color: #194056;
+    color: #FFFFFF;
 }
 
 .editBtn{
@@ -17,8 +17,8 @@
 }
 
 .editBtn:hover {
-    background-color: #D2B9C4;
-    color: rgb(0, 0, 0);
+    background-color: #194056;
+    color: #FFFFFF;
 }
 
 .deleteBtn{
@@ -29,6 +29,6 @@
 }
 
 .deleteBtn:hover {
-    background-color: #D2B9C4;
-    color: rgb(0, 0, 0);
+    background-color: #194056;
+    color: #FFFFFF;
 }

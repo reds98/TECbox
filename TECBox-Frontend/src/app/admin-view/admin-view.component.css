@@ -1,12 +1,14 @@
 .myBtn{
     background-color: #B8D3D9;
     border: 1px solid #B8D3D9;
+    padding: 3px 15px 3px 15px;
+    margin-top: 5px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 .myBtn:hover {
-    background-color: #D2B9C4;
-    color: rgb(0, 0, 0);
+    background-color: #194056;
+    color: #FFFFFF;
 }
 
 .editBtn{
@@ -17,8 +19,8 @@
 }
 
 .editBtn:hover {
-    background-color: #D2B9C4;
-    color: rgb(0, 0, 0);
+    background-color: #194056;
+    color: #FFFFFF;
 }
 
 .deleteBtn{
@@ -29,6 +31,6 @@
 }
 
 .deleteBtn:hover {
-    background-color: #D2B9C4;
-    color: rgb(0, 0, 0);
+    background-color: #194056;
+    color: #FFFFFF;
 }
