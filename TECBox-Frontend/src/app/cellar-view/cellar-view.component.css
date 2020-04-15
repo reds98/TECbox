@@ -1,0 +1,39 @@
+.myBtn{
+    background-color: #B8D3D9;
+    border: 1px solid #B8D3D9;
+    margin: 20px 0;
+    padding: 3px 15px 3px 15px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.myBtn:hover {
+    background-color: #D2B9C4;
+    color: rgb(0, 0, 0);
+}
+
+.editBtn{
+    color: #FFFFFF;
+    background-color: #3B565B;
+    border: 1px solid #B8D3D9;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.editBtn:hover {
+    background-color: #D2B9C4;
+    color: rgb(0, 0, 0);
+}
+
+.deleteBtn{
+    color: #FFFFFF;
+    background-color: #931621;
+    border: 1px solid #B8D3D9;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.deleteBtn:hover {
+    background-color: #D2B9C4;
+    color: rgb(0, 0, 0);
+}
+
+
+

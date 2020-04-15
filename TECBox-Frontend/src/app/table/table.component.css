@@ -1,23 +1,50 @@
 .myBtn{
     background-color: #B8D3D9;
     border: 1px solid #B8D3D9;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 .myBtn:hover {
-    background-color: #194056;
-    color: #B8D3D9;
+    background-color: #D2B9C4;
+    color: rgb(0, 0, 0);
+}
+
+.editBtn{
+    color: #FFFFFF;
+    background-color: #3B565B;
+    border: 1px solid #B8D3D9;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.editBtn:hover {
+    background-color: #D2B9C4;
+    color: rgb(0, 0, 0);
+}
+
+.deleteBtn{
+    color: #FFFFFF;
+    background-color: #931621;
+    border: 1px solid #B8D3D9;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.deleteBtn:hover {
+    background-color: #D2B9C4;
+    color: rgb(0, 0, 0);
 }
 
 .myBtn2{
     color: #B8D3D9;
-    background-color: #194056;
-    border: 1px solid #194056;
+    background-color: #3B565B;
+    border: 1px solid #3B565B;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 .myBtn2:hover {
     background-color: #B8D3D9;
-    color: #194056;
+    color: #3B565B;
 }
+
 .ml-1 {
     margin-left: 1 !important;
     margin-right: 1 !important;
