@@ -11,7 +11,7 @@ export class HomeViewComponent implements OnInit {
 
   // Attributes
   products: Object;
-  term;
+  search;
   packageArray;
 
   

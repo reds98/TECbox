@@ -1,18 +1,20 @@
-<h1>¡Bienvenido a TECBox!</h1>
-
-<ul *ngIf="products">
-  <li *ngFor="let product of products">
+<div class="input-icons myContainer">
+  <i class="fa fa-search icon" align="right"></i>
+  <input style="font-size:20px" type="text" name="search" [(ngModel)]="search" placeholder="Buscar..."class="form-control myBar" autocomplete="off">
+  <ul *ngIf="products">
+  <li *ngFor="let product of products | filter: search">
+    
+    <button align="right" class="btn myBtn" type="button" data-toggle="modal" data-target="#confirmModal"
+    (click) = "addToCart([product.precio_compra, product.descuento, product.impuesto])">Añadir al carrito</button>
     <div><img class="size" [src]="product.imagen" id="image"/>
-      <p class="name">{{ product.nombre }}</p>
-      <p class="descripcion"> Descripción: {{ product.descripcion }}</p>
-      <p class="vendedor">Vendedor: {{ product.vendedor }}</p>
-      <p class="precio_compra">Precio: {{ product.precio_compra }}$ {{ product.impuesto}} i.v.</p>
-      <p class="descuento">Descuento: {{ product.descuento }}</p>
-      <button align="right" class="btn myBtn" type="button" data-toggle="modal" data-target="#confirmModal"
-      (click) = "addToCart([product.precio_compra, product.descuento, product.impuesto])">Añadir al carrito</button>
-    </div> 
+      <p>{{product.nombre}}</p>
+      <p>Descripción: {{product.descripcion}}</p>
+      <p>Precio: {{ product.precio_compra }}$ {{ product.impuesto}} i.v.</p>
+      <p>Descuento: {{ product.descuento }}</p>
+      </div>
   </li>
-</ul>
+  </ul>
+</div>
 
 <button align="right" class="btn myBtn" type="button" (click) = "calcPurchaseTotal()">Comprar</button>
 
