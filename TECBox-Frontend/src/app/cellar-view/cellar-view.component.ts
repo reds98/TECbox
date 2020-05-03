@@ -11,10 +11,10 @@ export class CellarViewComponent implements OnInit {
 
   constructor(private httpService: HttpClient) { }
 
-  columnsParent = ["ID", "Cliente", "Descripción", "Fecha de Entrega"];
+  columnsParent = ["ID", "Cliente", "Descripción", "Fecha de Entrega", "Estado", "Distrito", "Ruta", "Descuento", "Impuesto"];
   consultationRequest = false;
   isNumber = true;
-  state;
+  Estado;
   userForm = new FormGroup({
     TrackingID: new FormControl()
     });
@@ -25,36 +25,36 @@ export class CellarViewComponent implements OnInit {
   dataParent = [
     {
     "ID": "001",
-    "Client": "Homero",
-    "Description": "Feo",
-    "ArivalDate": "Hoy",
-    "State" : "Listo para entrega",
-    "District" : "UwU",
-    "Route" : "[OwO, UwU, opo]",
-    "Discount" : "null",
-    "Tax" : "0"
+    "Cliente": "Homero",
+    "Descripción": "Feo",
+    "Fecha de Entrega": "Hoy",
+    "Estado" : "Listo para entrega",
+    "Distrito" : "UwU",
+    "Ruta" : "[OwO, UwU, opo]",
+    "Descuento" : "10%",
+    "Impuesto" : "0"
   },
   {    
     "ID": "002",
-    "Client": "Maggie",
-    "Description": "Bebe",
-    "ArivalDate": "Dos meses",
-    "State":"En sucursa",
-    "District" : "OwO",
-    "Route" : "[OwO, Uwu, opo]",
-    "Discount" : "null",
-    "Tax" : "0"
+    "Cliente": "Maggie",
+    "Descripción": "Bebe",
+    "Fecha de Entrega": "Dos meses",
+    "Estado":"En sucursal",
+    "Distrito" : "OwO",
+    "Ruta" : "[OwO, Uwu, opo]",
+    "Descuento" : "4%",
+    "Impuesto" : "0"
   },
   {
     "ID": "003",
-    "Client": "Bart",
-    "Description": "Cool",
-    "ArivalDate": "Ayer",
-    "State":"En ruta de entrega",
-    "District" : "OwO",
-    "Route" : "[OwO, Uwu, opo]",
-    "Discount" : "null",
-    "Tax" : "0"
+    "Cliente": "Bart",
+    "Descripción": "Cool",
+    "Fecha de Entrega": "Ayer",
+    "Estado":"En ruta de entrega",
+    "Distrito" : "OwO",
+    "Ruta" : "[OwO, Uwu, opo]",
+    "Descuento" : "0%",
+    "Impuesto" : "0"
   }
 ];
 
@@ -73,10 +73,16 @@ export class CellarViewComponent implements OnInit {
       this.isNumber = true;
 
       // Arreglar con un for (voy a mimis)
-      if(value == this.objectValues(this.dataParent[0])[0]){
-        this.state = this.objectValues(this.dataParent[0])[4];
-        console.log(this.objectValues(this.dataParent[0])[4]);
+      for(var i = 0; i < this.dataParent.length; i++){
+        if(value == this.objectValues(this.dataParent[i])[0]){
+          this.Estado = "El paquete se encuentra: " + this.objectValues(this.dataParent[i])[4];
+          console.log(this.objectValues(this.dataParent[i])[4]);
+        }
+        else{
+          this.Estado = "No se ha encontrado un paquete con el número de traqueo cosultado.";
+        }
       }
+
 
     }
     else{

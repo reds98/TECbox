@@ -1,10 +1,8 @@
-<div class="container">
-  <div>
+<div>
     <app-table [data] = "dataParent" [columns] = "columnsParent" #cellerTable></app-table>
   </div>
   <div>    
     <button (click)=isConsulting() class="btn myBtn ml-2 pd-2" type="button">Consultar paquete</button>	
-  </div>
 </div>
 
 
@@ -17,9 +15,11 @@
         <input formControlName=TrackingID placeholder="123456" type="text">
         <button (click)=consultPackage() class="btn myBtn ml-1">Buscar</button>
         <p style="color:red" *ngIf="!isNumber">Debe ingresar un número</p>
-        <p style="color:#194056;">{{this.state}}</p>
+        <p style="color:#194056;">{{this.Estado}}</p>
       </div>
 
      </form>
 </div>
+
+
 

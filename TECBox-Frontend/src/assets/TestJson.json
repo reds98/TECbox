@@ -136,19 +136,19 @@
       {
         "ID": "001",
         "Client": "Homero",
-        "Description": "Feo",
+        "Descripción": "Feo",
         "ArrivalDate": "Hoy"
       },
       {
         "ID": "002",
         "Client": "Maggie",
-        "Description": "Bebe",
+        "Descripción": "Bebe",
         "ArrivalDate": "Dos meses"
       },
       {
         "ID": "003",
         "Client": "Bart",
-        "Description": "Cool",
+        "Descripción": "Cool",
         "ArrivalDate": "Ayer"
       }
     ]
