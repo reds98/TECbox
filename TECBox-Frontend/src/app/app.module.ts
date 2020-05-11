@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -23,3 +24,4 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

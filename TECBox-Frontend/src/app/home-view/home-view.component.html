@@ -1,6 +1,10 @@
+
+<button align="right" class="btn buyBtn" type="button" (click) = "calcPurchaseTotal()">Comprar</button>
+
 <div class="input-icons myContainer">
   <i class="fa fa-search icon" align="right"></i>
   <input style="font-size:20px" type="text" name="search" [(ngModel)]="search" placeholder="Buscar..."class="form-control myBar" autocomplete="off">
+  
   <ul *ngIf="products">
   <li *ngFor="let product of products | filter: search">
     
@@ -16,7 +20,6 @@
   </ul>
 </div>
 
-<button align="right" class="btn myBtn" type="button" (click) = "calcPurchaseTotal()">Comprar</button>
 
 <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog myModal" role="document">

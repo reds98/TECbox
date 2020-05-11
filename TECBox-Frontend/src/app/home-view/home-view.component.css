@@ -7,7 +7,8 @@ ul {
 }
 
 li {
-    background: rgb(238, 238, 238);
+    background: rgb(230, 229, 229);
+    border-radius: 5px;
     padding: 1em;
     margin-right: 10px;
     min-height: 240px;
@@ -44,7 +45,21 @@ p.name {
     float: right;    
     margin: 15px 0 0 15px;
     flex-grow: 1;
-    }
+    border-radius: 5px;
+}
+
+.buyBtn{
+    margin: 15px 50px -55px 82%;
+    color: #FFFFFF;
+    background-color: rgb(72, 103, 109);
+    border: 1px solid rgb(72, 103, 109);
+}
+
+.buyBtn:hover {
+    background-color: #B8D3D9;
+    color: rgb(72, 103, 109);
+}
+
 .myBtn{
     background-color: #B8D3D9;
     border: 1px solid #B8D3D9;
@@ -104,4 +119,5 @@ margin-left: 30%;
 .myContainer{
     position: center;
     padding: 15px 50px 50px 50px;
+    margin-left: 8%;
   }

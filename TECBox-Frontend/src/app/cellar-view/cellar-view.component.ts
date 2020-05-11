@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { ReactiveFormsModule, FormGroup, FormControl} from '@angular/forms';
+import { ReactiveFormsModule, FormGroup, FormControl, FormBuilder} from '@angular/forms';
+
 
 @Component({
   selector: 'app-cellar-view',
@@ -76,18 +77,15 @@ export class CellarViewComponent implements OnInit {
       for(var i = 0; i < this.dataParent.length; i++){
         if(value == this.objectValues(this.dataParent[i])[0]){
           this.Estado = "El paquete se encuentra: " + this.objectValues(this.dataParent[i])[4];
-          console.log(this.objectValues(this.dataParent[i])[4]);
+          break;
         }
         else{
           this.Estado = "No se ha encontrado un paquete con el número de traqueo cosultado.";
         }
       }
-
-
     }
     else{
       this.isNumber = false;
     }
   }
-  
 }
