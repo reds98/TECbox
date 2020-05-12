@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { CellarViewRoutingModule } from './cellar-view-routing.module';
 import { CellarViewComponent } from './cellar-view.component';
+import {AdminViewRoutingModule} from '../admin-view/admin-view-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
 
@@ -14,6 +15,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     CellarViewRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     SharedModule
   ]
 })

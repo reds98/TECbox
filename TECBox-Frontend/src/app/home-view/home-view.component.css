@@ -1,0 +1,42 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li {
+    background: rgb(238, 238, 238);
+    padding: 1em;
+    margin-right: 10px;
+    width: 20%;
+    height: 200px;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
+
+p {
+    margin: 0;
+    font-size: .8rem;
+    flex-grow: 1;
+}
+
+p.name {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.size
+{
+    margin-left:0.3em;
+    width:8em;
+    height:8em;
+    }
+
+#image  {
+    float: right;    
+        margin: 0 0 0 15px;
+    }
