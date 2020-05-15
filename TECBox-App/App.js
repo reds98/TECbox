@@ -6,11 +6,11 @@ import PackageView from './containers/package-view.js';
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {auth: false};
+    this.state = {auth: true,serverIp:''};
   }
 
-  validate=()=>{
-    this.setState(()=>({auth:true}));
+  validate=(serverIp)=>{
+    this.setState(()=>({auth:true,serverIp:serverIp}));
   };
 
   onClose = () => {
@@ -18,7 +18,9 @@ export default class App extends Component {
   }
 
   render() {
-    let view = this.state.auth ? <PackageView onClose={this.onClose}/> : <LoginView onValidate={this.validate}/>
+    let view = this.state.auth?
+    <PackageView serverIp={this.state.serverIp} onClose={this.onClose}/>:
+    <LoginView onValidate={this.validate}/>
     return view;
   }
 }

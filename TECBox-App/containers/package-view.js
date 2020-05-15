@@ -26,10 +26,14 @@ export default class PackageView extends Component {
    * Ejecuta un request para cargar los paquetes
    */
   componentDidMount(){
-    fetch('https://jsonplaceholder.typicode.com/posts')
-    .then((response) => response.json())
-    .then((responseJson) => {
+    fetch(`http://${this.props.serverIp}/packs`)
+    .then((responseJson) => responseJson.json())
+    .then((response) => {
       console.log("Carga exitosa");
+      this.setState({items:response.items});
+    })
+    .catch((error) => {
+      alert(error);
       this.setState({items:[
         {"nombre":"F1","estado":"pendiente"},
         {"nombre":"F2","estado":"entregado"},
@@ -43,9 +47,6 @@ export default class PackageView extends Component {
         {"nombre":"F3","estado":"fallido"},
         {"nombre":"F3","estado":"fallido"},
         ]});
-    })
-    .catch((error) => {
-      console.error(error);
     });
   }
 
