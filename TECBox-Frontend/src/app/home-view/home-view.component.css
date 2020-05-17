@@ -9,46 +9,42 @@ ul {
     flex-wrap: wrap;
 }
 
+
 li {
     background: rgb(230, 229, 229);
     border-radius: 5px;
     padding: 1em;
     margin-right: 10px;
-    min-height: 240px;
     width: 20%;
-    height: 15%;
+    height: auto;
     margin-bottom: 1em;
     display: flex;
     flex-direction: column;
-    float: left;
 }
 
 p {
-    padding-top: 8px;
-    margin: 1px;
+    margin-left: 7%;
+    padding-top: 3px;
     font-size: .8rem;
     flex-grow: 1;
 }
 
 p.name {
+    text-transform: uppercase;
     font-weight: bold;
     font-size: 1.2rem;
 }
 
+p.description {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    flex-grow: 1;
+}
+
 .size
 {
-    margin-left:0.3em;
-    width:8em;
-    height:8em;
-    
-    flex-grow: 1;
-    }
-
-#image  {
-    float: right;    
-    margin: 15px 0 0 15px;
-    flex-grow: 1;
-    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
 }
 
 .buyBtn{
@@ -63,7 +59,23 @@ p.name {
     color: rgb(72, 103, 109);
 }
 
+.buyBtn2{
+    color: #FFFFFF;
+    background-color: rgb(72, 103, 109);
+    border: 1px solid rgb(72, 103, 109);
+}
+
+.buyBtn2:hover {
+    background-color: #B8D3D9;
+    color: rgb(72, 103, 109);
+}
+
 .myBtn{
+    margin-top: -50px;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    float: right;
     background-color: #B8D3D9;
     border: 1px solid #B8D3D9;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -97,6 +109,7 @@ p.name {
     background-color: #194056;
     color: #FFFFFF;
 }
+
 .myBar{
     width: 35%;
     height: 35px;
@@ -119,8 +132,27 @@ min-width: 40px;
 margin-left: 30%;
 } 
 
+.myIcon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 30%;
+    right: 25%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+} 
+
 .myContainer{
     position: center;
     padding: 15px 50px 50px 50px;
     margin-left: 8%;
-  }
+}
+
+.myModal{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+

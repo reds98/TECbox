@@ -1,36 +1,42 @@
-<button align="right" class="btn buyBtn" type="button" (click) = "calcPurchaseTotal()">Comprar</button>
 
 <!-- Shows all the products and provides a filter for them -->
 <div class="input-icons myContainer">
+  <button align="right" class="btn buyBtn" type="button" (click) = "calcPurchaseTotal()">Comprar</button>
+
+  <ul>
   <i class="fa fa-search icon" align="right"></i>
   <input style="font-size:20px" type="text" name="search" [(ngModel)]="search" placeholder="Buscar..."class="form-control myBar" autocomplete="off">
-  
+  </ul>
+
   <ul *ngIf="products">
   <li *ngFor="let product of products | filter: search">
-    
-    <button align="right" class="btn myBtn" type="button" data-toggle="modal" data-target="#confirmModal"
-    (click) = "addToCart([product.precio_compra, product.descuento, product.impuesto])">Añadir al carrito</button>
-    <div><img class="size" [src]="product.imagen" id="image"/>
-      <p>{{product.nombre}}</p>
-      <p>Descripción: {{product.descripcion}}</p>
-      <p>Precio: {{ product.precio_compra }}$ {{ product.impuesto}} i.v.</p>
-      <p>Descuento: {{ product.descuento }}</p>
-      </div>
+    <div>
+      <p class="name">{{product.nombre}}</p>
+      <p class="description">Descripción: {{product.descripcion}}</p>
+      <img class="size" [src]="product.imagen"/>
+      <p class="description">Precio: {{ product.precio_compra }}$ + {{ product.impuesto*100}}% i.v.</p>
+      <p class="description"> Descuento: {{product.descuento*100}}%</p>
+      <button class="btn myBtn ml-2" type="button" data-toggle="modal" data-target="#confirmModal"
+      (click) = "addToCart([product.precio_compra, product.descuento, product.impuesto])">
+      <i class="fa fa-shopping-cart fa-2x myIcon"></i></button>
+    </div>
   </li>
   </ul>
 </div>
 
 <!-- Confirmation modal for added to cart -->
-<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog myModal" role="document">
         <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">¡Agregado al carrito!</h5>
+        <div class="modal-body">
+          <h4 class="modal-title" id="modal-basic-title">¡Agregado al carrito!</h4>
+        </div>
+        <div class="modal-body">
+          <label for="dateOfBirth">¡Continúe comprando con nosotros!</label>
         </div>
         <div class="modal-footer mb-3">
-          <button aria-hidden="true" type="button" class="btn myBtn" data-dismiss="modal">Cerrar</button>
+          <button aria-hidden="true" type="button" class="btn buyBtn2" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
   </div>
-
