@@ -9,6 +9,7 @@ export class ClientViewComponent implements OnInit {
 
   constructor() { }
   
+  // Attributes
   columnsParent = ["Cedula", "Nombre", "Correo Electrónico", "Casillero", "Teléfono", "Celular", "Dirección de Entrega", "Usuario"];
 
   dataParent = [

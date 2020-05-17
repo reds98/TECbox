@@ -118,7 +118,7 @@ export class HomeViewComponent implements OnInit {
     this.packageArray = [];
   }
 
-  // Receives a list of the products cost, Descuento and tax, respectively
+  // Receives a list of the products cost, discount and tax, respectively
   addToCart(list){
     this.packageArray.push(list);
     console.log(this.packageArray);

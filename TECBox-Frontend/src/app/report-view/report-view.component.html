@@ -1,1 +1,15 @@
-<p>CACA</p>
+<div>
+  <mat-form-field class="example-full-width float-right">
+    <mat-label>Fecha final</mat-label>
+    <input matInput [matDatepicker]="picker1">
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1 [startAt]="finalDate"></mat-datepicker>
+  </mat-form-field>
+  
+  <mat-form-field class="example-full-width float-right">
+    <mat-label>Fecha de inicio</mat-label>
+    <input matInput [matDatepicker]="picker2">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2 [startAt]="startDate"></mat-datepicker>
+  </mat-form-field>  
+</div>

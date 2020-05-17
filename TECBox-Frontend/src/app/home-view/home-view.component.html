@@ -1,6 +1,6 @@
-
 <button align="right" class="btn buyBtn" type="button" (click) = "calcPurchaseTotal()">Comprar</button>
 
+<!-- Shows all the products and provides a filter for them -->
 <div class="input-icons myContainer">
   <i class="fa fa-search icon" align="right"></i>
   <input style="font-size:20px" type="text" name="search" [(ngModel)]="search" placeholder="Buscar..."class="form-control myBar" autocomplete="off">
@@ -20,7 +20,7 @@
   </ul>
 </div>
 
-
+<!-- Confirmation modal for added to cart -->
 <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog myModal" role="document">
         <div class="modal-content">

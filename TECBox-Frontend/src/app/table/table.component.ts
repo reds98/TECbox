@@ -25,7 +25,7 @@ export class TableComponent implements OnInit {
   objectValues = Object.values;
   objectKeys = Object.keys;
 
-  // Child attribute
+  // Child attributes
   @Input() columns = null;
   @Input() data = null;
 
@@ -101,6 +101,7 @@ export class TableComponent implements OnInit {
   };
 
 
+  // Checks for empty fields in form and adds the inputs to a lists
   checkForm(){
     for(var i = 0; i < this.columns.length; i++){
       if(this.userForm.get(this.columns[i]).value == null){
@@ -109,7 +110,6 @@ export class TableComponent implements OnInit {
       else if(!this.userForm.get(this.columns[i]).value.emptyField){
         this.emptyField = false;
       }
-      console.log(i);
     }
     if(this.emptyField == false){
       var list:any = [];

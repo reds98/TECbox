@@ -1,3 +1,4 @@
+// This module is to allow using a shared component in multiple different modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableComponent } from '../table/table.component'

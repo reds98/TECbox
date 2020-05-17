@@ -12,10 +12,11 @@ export class CellarViewComponent implements OnInit {
 
   constructor(private httpService: HttpClient) { }
 
+  // Attributes
   columnsParent = ["ID", "Cliente", "Descripción", "Fecha de Entrega", "Estado", "Distrito", "Ruta", "Descuento", "Impuesto"];
   consultationRequest = false;
   isNumber = true;
-  Estado;
+  state;
   userForm = new FormGroup({
     TrackingID: new FormControl()
     });
@@ -64,23 +65,24 @@ export class CellarViewComponent implements OnInit {
 
   }
 
+  // Verifies that the client is consulting a package
   isConsulting(){
     this.consultationRequest = true;
   }
 
+  // Checks if the number provided matches an existing package and returns it's current state
   consultPackage(){
     var value = this.userForm.get('TrackingID').value;
     if(!isNaN(value)){
       this.isNumber = true;
 
-      // Arreglar con un for (voy a mimis)
       for(var i = 0; i < this.dataParent.length; i++){
         if(value == this.objectValues(this.dataParent[i])[0]){
-          this.Estado = "El paquete se encuentra: " + this.objectValues(this.dataParent[i])[4];
+          this.state = "El paquete se encuentra: " + this.objectValues(this.dataParent[i])[4];
           break;
         }
         else{
-          this.Estado = "No se ha encontrado un paquete con el número de traqueo cosultado.";
+          this.state = "No se ha encontrado un paquete con el número de traqueo cosultado.";
         }
       }
     }
