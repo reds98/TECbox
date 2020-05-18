@@ -19,7 +19,7 @@ export class CellarViewComponent implements OnInit {
   state;
   userForm = new FormGroup({
     TrackingID: new FormControl()
-    });
+  });
 
   objectValues = Object.values;
   objectKeys = Object.keys;

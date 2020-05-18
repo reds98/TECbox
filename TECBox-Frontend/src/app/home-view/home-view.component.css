@@ -41,12 +41,65 @@ p.description {
     flex-grow: 1;
 }
 
-.size
-{
+.size{
     max-width: 100%;
     height: auto;
 }
 
+
+.myBar{
+    width: 35%;
+    height: 35px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.input-icons i { 
+    position: absolute; 
+} 
+
+.input-icons { 
+    width: 100%; 
+    margin-bottom: 10px;
+} 
+
+.icon { 
+    padding: 10px; 
+    min-width: 40px;
+    margin-left: 30%;
+} 
+
+.myIcon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 30%;
+    right: 25%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+} 
+
+.myContainer{
+    position: center;
+    padding: 15px 50px 50px 50px;
+    margin-left: 8%;
+}
+
+.myModal{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.myLabel{
+    font-size: 0.9rem;
+    padding: 5px 70% 5px 5px;
+}
+
+/*
+ Buttons
+*/
 .buyBtn{
     margin: 15px 50px -55px 76%;
     color: #FFFFFF;
@@ -60,6 +113,7 @@ p.description {
 }
 
 .buyBtn2{
+    margin-top: 5px;
     color: #FFFFFF;
     background-color: rgb(72, 103, 109);
     border: 1px solid rgb(72, 103, 109);
@@ -109,50 +163,4 @@ p.description {
     background-color: #194056;
     color: #FFFFFF;
 }
-
-.myBar{
-    width: 35%;
-    height: 35px;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-.input-icons i { 
-position: absolute; 
-} 
-
-.input-icons { 
-width: 100%; 
-margin-bottom: 10px;
-} 
-
-.icon { 
-padding: 10px; 
-min-width: 40px;
-margin-left: 30%;
-} 
-
-.myIcon {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 50%;
-    left: 30%;
-    right: 25%;
-    height: 50%;
-    transform: translate(-50%, -50%);
-} 
-
-.myContainer{
-    position: center;
-    padding: 15px 50px 50px 50px;
-    margin-left: 8%;
-}
-
-.myModal{
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
 
