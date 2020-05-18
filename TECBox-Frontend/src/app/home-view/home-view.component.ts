@@ -18,6 +18,7 @@ export class HomeViewComponent implements OnInit {
   isNumber = true;
   state;
   totalCost;
+  currentClient;
   userForm = new FormGroup({
     TrackingID: new FormControl()
   });
@@ -122,24 +123,70 @@ export class HomeViewComponent implements OnInit {
 
 
 
+  packageData = [
+    {
+    "ID": "001",
+    "Cliente": "Homero",
+    "Descripción": "Feo",
+    "Fecha de Entrega": "Hoy",
+    "Estado" : "Listo para entrega",
+    "Distrito" : "UwU",
+    "Ruta" : "[OwO, UwU, opo]",
+    "Descuento" : "10",
+    "Impuesto" : "0"
+  },
+  {    
+    "ID": "002",
+    "Cliente": "Maggie",
+    "Descripción": "Bebe",
+    "Fecha de Entrega": "Dos meses",
+    "Estado":"En sucursal",
+    "Distrito" : "OwO",
+    "Ruta" : "[OwO, Uwu, opo]",
+    "Descuento" : "4",
+    "Impuesto" : "0"
+  },
+  {
+    "ID": "003",
+    "Cliente": "Bart",
+    "Descripción": "Cool",
+    "Fecha de Entrega": "Ayer",
+    "Estado":"En ruta de entrega",
+    "Distrito" : "OwO",
+    "Ruta" : "[OwO, Uwu, opo]",
+    "Descuento" : "0",
+    "Impuesto" : "0"
+  }
+];
+
   ngOnInit(): void {
     this.products = this.dataParent;
     this.costDiscTaxArray = [];
     this.productArray = [];
     this.totalCost = 0;
+    this.currentClient = "Homero"
   }
 
-  
-    // Checks if the number provided matches an existing package and returns it's current state
-    consultPackage(){
-      var value = this.userForm.get('TrackingID').value;
-      if(!isNaN(value)){
-        this.isNumber = true;
-      }
-      else{
-        this.isNumber = false;
+
+  // Checks if the number provided matches an existing package and returns it's current state
+  consultPackage(){
+    var value = this.userForm.get('TrackingID').value;
+    if(!isNaN(value)){
+      this.isNumber = true;
+      for(var i = 0; i < this.packageData.length; i++){
+        if(value == this.objectValues(this.packageData[i])[0]){
+          this.state = "El paquete se encuentra: " + this.objectValues(this.packageData[i])[4];
+          break;
+        }
+        else{
+          this.state = "No se ha encontrado un paquete con el número de traqueo cosultado.";
+        }
       }
     }
+    else{
+      this.isNumber = false;
+    }
+  }
 
 
   // Receives a list of the products cost, discount and tax, respectively as list1 and the product's name as prod
@@ -149,6 +196,7 @@ export class HomeViewComponent implements OnInit {
     console.log(this.costDiscTaxArray);
   }
 
+  // Calculates the total cost of the purchase
   calcPurchaseTotal(){
     var costWDiscount = 0;
     var costWTax = 0;

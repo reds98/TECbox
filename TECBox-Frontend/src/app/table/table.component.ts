@@ -48,11 +48,34 @@ export class TableComponent implements OnInit {
   initTable(){
     $(document).ready(function() {
       $('#cellerTable').DataTable( {
-        
+      "bPaginate": false,
+      "bLengthChange": false,
+      "bFilter": true,
+      "bInfo": false,
       } );
     } );
   }
     
+  // Initializes popovers
+  initPopovers(){ 
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover({
+          placement : 'left',
+          trigger : 'hover'
+      });
+    });
+    $("#saveBtn").attr('visible', 'false');
+  }
+
+  // Creates form
+  userForm = new FormGroup({});
+
+  initForm(){
+    for(var i = 0; i < this.columns.length; i++){
+      this.userForm.addControl(this.columns[i], new FormControl());
+    }
+  };
+
   // Method for selecting rows in table
   selectItems(){
     $(document).ready(function() {
@@ -77,28 +100,6 @@ export class TableComponent implements OnInit {
       $('#cellerTable').DataTable().row('.selected').remove().draw( false );
   } );
   }
-
-  // Initializes popovers
-  initPopovers(){ 
-      $(document).ready(function(){
-        $('[data-toggle="popover"]').popover({
-            placement : 'left',
-            trigger : 'hover'
-        });
-      });
-      
-      $("#saveBtn").attr('visible', 'false');
-
-    }
-
-  // Creates form
-  userForm = new FormGroup({});
-
-  initForm(){
-    for(var i = 0; i < this.columns.length; i++){
-      this.userForm.addControl(this.columns[i], new FormControl());
-    }
-  };
 
 
   // Checks for empty fields in form and adds the inputs to a lists
