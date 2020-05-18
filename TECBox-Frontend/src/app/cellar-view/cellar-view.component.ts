@@ -13,7 +13,7 @@ export class CellarViewComponent implements OnInit {
   constructor(private httpService: HttpClient) { }
 
   // Attributes
-  columnsParent = ["ID", "Cliente", "Descripción", "Fecha de Entrega", "Estado", "Distrito", "Ruta", "Descuento", "Impuesto"];
+  columnsParent = ["ID de rastreo", "Cliente", "Descripción", "Fecha de Entrega", "Estado", "Distrito", "Ruta", "Descuento", "Impuesto"];
   consultationRequest = false;
   isNumber = true;
   state;
