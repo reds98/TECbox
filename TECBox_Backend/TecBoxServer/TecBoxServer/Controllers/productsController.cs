@@ -19,8 +19,8 @@ namespace TecBoxServer.Controllers
                 barcode="1001001001001",
                 seller="Juancho",
                 purchase_price="2992",
-                tax="10%",
-                discount="001",
+                tax="0.25",
+                discount="0.3",
                 image="https://www.decowoerner.com/images/contentUploads/pictures/500_599/550/www/101000/550_116_00-1-0-00.jpg"
             },
             new Products
@@ -30,8 +30,8 @@ namespace TecBoxServer.Controllers
                 barcode="1001001001001",
                 seller="Juancho",
                 purchase_price="2992",
-                tax="10%",
-                discount="001",
+                tax="0.1",
+                discount="0.18",
                 image="https://www.decowoerner.com/images/contentUploads/pictures/500_599/550/www/101000/550_116_00-1-0-00.jpg"
             },
             new Products
@@ -41,8 +41,8 @@ namespace TecBoxServer.Controllers
                 barcode="1001001001001",
                 seller="Juancho",
                 purchase_price="2992",
-                tax="10%",
-                discount="001",
+                tax="0.1",
+                discount="0.15",
                 image="https://www.decowoerner.com/images/contentUploads/pictures/500_599/550/www/101000/550_116_00-1-0-00.jpg"
             }
 

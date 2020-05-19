@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ReactiveFormsModule, FormGroup, FormControl, FormBuilder} from '@angular/forms';
+import { CellarViewService } from 'src/app/cellar-view/cellar-view.service'
 
 
 @Component({
@@ -10,7 +11,7 @@ import { ReactiveFormsModule, FormGroup, FormControl, FormBuilder} from '@angula
 })
 export class CellarViewComponent implements OnInit {
 
-  constructor(private httpService: HttpClient) { }
+  constructor(private cellarService: CellarViewService) { }
 
   // Attributes
   columnsParent = ["ID de rastreo", "Cliente", "Descripción", "Fecha de Entrega", "Estado", "Distrito", "Ruta", "Descuento", "Impuesto"];
@@ -24,45 +25,14 @@ export class CellarViewComponent implements OnInit {
   objectValues = Object.values;
   objectKeys = Object.keys;
 
-  dataParent = [
-    {
-    "ID": "001",
-    "Cliente": "Homero",
-    "Descripción": "Feo",
-    "Fecha de Entrega": "Hoy",
-    "Estado" : "Listo para entrega",
-    "Distrito" : "UwU",
-    "Ruta" : "[OwO, UwU, opo]",
-    "Descuento" : "10%",
-    "Impuesto" : "0"
-  },
-  {    
-    "ID": "002",
-    "Cliente": "Maggie",
-    "Descripción": "Bebe",
-    "Fecha de Entrega": "Dos meses",
-    "Estado":"En sucursal",
-    "Distrito" : "OwO",
-    "Ruta" : "[OwO, Uwu, opo]",
-    "Descuento" : "4%",
-    "Impuesto" : "0"
-  },
-  {
-    "ID": "003",
-    "Cliente": "Bart",
-    "Descripción": "Cool",
-    "Fecha de Entrega": "Ayer",
-    "Estado":"En ruta de entrega",
-    "Distrito" : "OwO",
-    "Ruta" : "[OwO, Uwu, opo]",
-    "Descuento" : "0%",
-    "Impuesto" : "0"
-  }
-];
+  dataParent;
 
   
+  // Assigns the data received to the dataParent attr
   ngOnInit(): void {
-
+    this.cellarService.getPackage()
+    .subscribe(data => this.dataParent = data);
+    console.log(this.dataParent);
   }
 
   // Verifies that the client is consulting a package

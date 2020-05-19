@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, FormBuilder} from '@angular/forms';
+import { HomeViewService } from 'src/app/home-view/home-view.service'
 
 @Component({
   selector: 'app-home-view',
@@ -8,7 +9,7 @@ import { ReactiveFormsModule, FormGroup, FormControl, FormBuilder} from '@angula
 })
 export class HomeViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private homeService: HomeViewService) { }
 
   // Attributes
   products: Object;
@@ -28,100 +29,7 @@ export class HomeViewComponent implements OnInit {
   objectValues = Object.values;
   objectKeys = Object.keys;
 
-  dataParent = [
-    {
-      "nombre": "cuerda",
-      "descripcion": "atar cosas",
-      "codigo_barras": "123",
-      "vendedor": "panchito",
-      "precio_compra": "20",
-      "impuesto": "0.7",
-      "descuento": "0",
-      "imagen" : "https://www.decowoerner.com/images/contentUploads/pictures/500_599/550/www/101000/550_116_00-1-0-00.jpg"
-    },
-    {
-      "nombre": "mechero",
-      "descripcion": "quemar",
-      "codigo_barras": "124",
-      "vendedor": "panchito",
-      "precio_compra": "10",
-      "impuesto": "0.4",
-      "descuento": "0.2",
-      "imagen" : "https://images-na.ssl-images-amazon.com/images/I/41tTOKXoUHL._SX342_.jpg"
-    },
-    {
-      "nombre": "cuerda",
-      "descripcion": "Amarrar artefactos",
-      "codigo_barras": "125",
-      "vendedor": "no se",
-      "precio_compra": "100",
-      "impuesto": "0.13",
-      "descuento": "0.1",
-      "imagen" : "https://www.decowoerner.com/images/contentUploads/pictures/500_599/550/www/101000/550_116_00-1-0-00.jpg"
-    },
-    {
-      "nombre": "cuerda",
-      "descripcion": "atar cosas",
-      "codigo_barras": "123",
-      "vendedor": "panchito",
-      "precio_compra": "20",
-      "impuesto": "0.7",
-      "descuento": "0",
-      "imagen" : "https://www.decowoerner.com/images/contentUploads/pictures/500_599/550/www/101000/550_116_00-1-0-00.jpg"
-    },
-    {
-      "nombre": "mechero",
-      "descripcion": "Instrumento decorativo",
-      "codigo_barras": "124",
-      "vendedor": "panchito",
-      "precio_compra": "10",
-      "impuesto": "0.4",
-      "descuento": "0.2",
-      "imagen" : "https://images-na.ssl-images-amazon.com/images/I/41tTOKXoUHL._SX342_.jpg"
-    },
-    {
-      "nombre": "cuerda",
-      "descripcion": "Ser una cuerda",
-      "codigo_barras": "125",
-      "vendedor": "no se",
-      "precio_compra": "100",
-      "impuesto": "0.13",
-      "descuento": "0.1",
-      "imagen" : "https://www.decowoerner.com/images/contentUploads/pictures/500_599/550/www/101000/550_116_00-1-0-00.jpg"
-    },
-    {
-      "nombre": "cuerda",
-      "descripcion": "atar cosas",
-      "codigo_barras": "123",
-      "vendedor": "panchito",
-      "precio_compra": "20",
-      "impuesto": "0.7",
-      "descuento": "0",
-      "imagen" : "https://www.decowoerner.com/images/contentUploads/pictures/500_599/550/www/101000/550_116_00-1-0-00.jpg"
-    },
-    {
-      "nombre": "mechero",
-      "descripcion": "Equipo de laboratorio",
-      "codigo_barras": "124",
-      "vendedor": "panchito",
-      "precio_compra": "10",
-      "impuesto": "0.4",
-      "descuento": "0.2",
-      "imagen" : "https://images-na.ssl-images-amazon.com/images/I/41tTOKXoUHL._SX342_.jpg"
-    },
-    {
-      "nombre": "cuerda",
-      "descripcion": "zapatos",
-      "codigo_barras": "125",
-      "vendedor": "no se",
-      "precio_compra": "100",
-      "impuesto": "0.13",
-      "descuento": "0.1",
-      "imagen" : "https://www.decowoerner.com/images/contentUploads/pictures/500_599/550/www/101000/550_116_00-1-0-00.jpg"
-    }
-  ];
-
-
+  dataParent;
 
   packageData = [
     {
@@ -159,14 +67,19 @@ export class HomeViewComponent implements OnInit {
   }
 ];
 
+
+  // Assigns the data received to the dataParent attr
   ngOnInit(): void {
     this.products = this.dataParent;
     this.costDiscTaxArray = [];
     this.productArray = [];
     this.totalCost = 0;
     this.currentClient = "Homero"
-  }
 
+    this.homeService.getProducts()
+    .subscribe(data => this.dataParent = data);
+    console.log(this.dataParent);
+  }
 
   // Checks if the number provided matches an existing package and returns it's current state
   consultPackage(){
@@ -215,4 +128,3 @@ export class HomeViewComponent implements OnInit {
     }
   }
 }
-

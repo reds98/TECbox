@@ -10,7 +10,12 @@ namespace TecBoxServer
         public string id { get; set; }
         public string client { get; set; }
         public string description { get; set; }
-        public string arivalDate { get; set; }
+        public string arival_date { get; set; }
+        public string state { get; set; }
+        public string district { get; set; }
+        public string route { get; set; }
+        public string discount { get; set; }
+        public string tax { get; set; }
 
     }
 }

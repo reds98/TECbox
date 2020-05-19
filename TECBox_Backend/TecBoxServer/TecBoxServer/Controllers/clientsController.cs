@@ -14,6 +14,7 @@ namespace TecBoxServer.Controllers
         private static List<clients> Glossary = new List<clients> {
             new clients
             {
+                id= "12345678",
                 name= "bob esponja",
                 email="bob@gmail.com",
                 locker="123",
@@ -25,6 +26,7 @@ namespace TecBoxServer.Controllers
             },
             new clients
             {
+                id= "12345678",
                 name= "bob esponja",
                 email="bob@gmail.com",
                 locker="123",
@@ -36,6 +38,7 @@ namespace TecBoxServer.Controllers
             },
             new clients
             {
+                id= "12345678",
                 name= "bob esponja",
                 email="bob@gmail.com",
                 locker="123",

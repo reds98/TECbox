@@ -16,13 +16,13 @@
   <ul *ngIf="products">
   <li *ngFor="let product of products | filter: search">
     <div>
-      <p class="name">{{product.nombre}}</p>
-      <p class="description">Descripción: {{product.descripcion}}</p>
-      <img class="size" [src]="product.imagen"/>
-      <p class="description">Precio: {{ product.precio_compra }}$ + {{ product.impuesto*100}}% i.v.</p>
-      <p class="description"> Descuento: {{product.descuento*100}}%</p>
+      <p class="name">{{product.name}}</p>
+      <p class="description">Descripción: {{product.description}}</p>
+      <img class="size" [src]="product.image"/>
+      <p class="description">Precio: {{ product.purchase_price }}$ + {{ product.tax*100}}% i.v.</p>
+      <p class="description"> Descuento: {{product.discount*100}}%</p>
       <button class="btn myBtn ml-2" type="button" data-toggle="modal" data-target="#confirmModal"
-      (click) = "addToCart([product.precio_compra, product.descuento, product.impuesto], product.nombre)">
+      (click) = "addToCart([product.purchase_price, product.discount, product.tax], product.name)">
       <i class="fa fa-shopping-cart fa-2x myIcon"></i></button>
     </div>
   </li>
@@ -59,7 +59,7 @@
       </div>
       <div class="modal-footer mb-3">
         <label class="myLabel">
-          Total: {{this.totalCost}}
+          Total: $ {{this.totalCost}}
         </label>
         <button aria-hidden="true" type="button" class="btn buyBtn2" data-dismiss="modal">Cerrar</button>
       </div>
