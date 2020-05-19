@@ -1,0 +1,22 @@
+/*
+$primary: #194056;
+$secondary: #B8D3D9;
+$third: #86626E;
+$light: #F9FAFA;
+$dark: #1B1B1B;
+*/
+.navbar {
+    background-color: #194056;
+    position: relative;
+}
+
+.myBtn {
+    color: #B8D3D9;
+    border: #B8D3D9;
+    border: 1px solid #B8D3D9;
+}
+
+.myBtn:hover {
+    background-color: #B8D3D9;
+    color: #194056; 
+  }

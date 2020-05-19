@@ -1,0 +1,26 @@
+<!-- Table component for celler -->
+<h1>
+  Tabla de Características de Paquetes
+</h1>
+<div>
+    <app-table [data] = "dataParent" [columns] = "columnsParent" #cellerTable></app-table>
+  </div>
+  <div>    
+    <button (click)=isConsulting() class="btn myBtn ml-2 pd-2" type="button">Consultar paquete</button>	
+</div>
+
+
+<!-- Input for tracking a package's location -->
+<div *ngIf="consultationRequest" class="container ml-2">
+  <h2 style="font-size:20px">Digite el número de traqueo del paquete</h2>
+
+  <form [formGroup]="userForm">
+      <div class="form-group">
+        <input formControlName=TrackingID placeholder="123456" type="text">
+        <button (click)=consultPackage() class="btn myBtn ml-1">Buscar</button>
+        <p style="color:red" *ngIf="!isNumber">Debe ingresar un número</p>
+        <p style="color:#194056;">{{this.state}}</p>
+      </div>
+
+     </form>
+</div>

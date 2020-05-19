@@ -1,0 +1,21 @@
+<div>
+
+  <!-- Calendario de fecha final -->
+  <mat-form-field class="example-full-width float-right">
+    <mat-label>Fecha final</mat-label>
+    <input matInput [matDatepicker]="picker1" [(ngModel)]="endDateInput">
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1 [startAt]="finalDate"></mat-datepicker>
+  </mat-form-field>
+  
+  <!-- Calendario de fecha inicial -->
+  <mat-form-field class="example-full-width float-right">
+    <mat-label>Fecha de inicio</mat-label>
+    <input matInput [matDatepicker]="picker2" [(ngModel)]="startDateInput">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2 [startAt]="startDate"></mat-datepicker>
+  </mat-form-field>  
+
+  
+  <button (click)="print(startDateInput, endDateInput)">Test</button>
+</div>
