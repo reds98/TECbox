@@ -1,0 +1,38 @@
+/*
+ Stylessheet for client-view component
+*/
+
+.myBtn{
+    background-color: #B8D3D9;
+    border: 1px solid #B8D3D9;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.myBtn:hover {
+    background-color: #194056;
+    color: #FFFFFF;
+}
+
+.editBtn{
+    color: #FFFFFF;
+    background-color: #3B565B;
+    border: 1px solid #B8D3D9;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.editBtn:hover {
+    background-color: #194056;
+    color: #FFFFFF;
+}
+
+.deleteBtn{
+    color: #FFFFFF;
+    background-color: #931621;
+    border: 1px solid #B8D3D9;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.deleteBtn:hover {
+    background-color: #194056;
+    color: #FFFFFF;
+}

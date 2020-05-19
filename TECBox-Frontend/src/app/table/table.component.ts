@@ -19,12 +19,13 @@ export class TableComponent implements OnInit {
   // Attributes
   productArray;
   selectedItem;
-  newProduct;
+  newProduct =false;
+  emptyField = false;
 
   objectValues = Object.values;
   objectKeys = Object.keys;
 
-  // Child attribute
+  // Child attributes
   @Input() columns = null;
   @Input() data = null;
 
@@ -38,7 +39,8 @@ export class TableComponent implements OnInit {
     this.initTable();
     this.selectItems();
     this.deleteItems();
-    this.initPopovers()
+    this.initPopovers();
+    this.initForm();
     }
 
 
@@ -46,11 +48,34 @@ export class TableComponent implements OnInit {
   initTable(){
     $(document).ready(function() {
       $('#cellerTable').DataTable( {
-        
+      "bPaginate": false,
+      "bLengthChange": false,
+      "bFilter": true,
+      "bInfo": false,
       } );
     } );
   }
     
+  // Initializes popovers
+  initPopovers(){ 
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover({
+          placement : 'left',
+          trigger : 'hover'
+      });
+    });
+    $("#saveBtn").attr('visible', 'false');
+  }
+
+  // Creates form
+  userForm = new FormGroup({});
+
+  initForm(){
+    for(var i = 0; i < this.columns.length; i++){
+      this.userForm.addControl(this.columns[i], new FormControl());
+    }
+  };
+
   // Method for selecting rows in table
   selectItems(){
     $(document).ready(function() {
@@ -68,6 +93,7 @@ export class TableComponent implements OnInit {
   } );
   }
 
+
   // Deletes selected row
   deleteItems(){
     $('#deleteBtn').click( function () {
@@ -75,25 +101,34 @@ export class TableComponent implements OnInit {
   } );
   }
 
-  // Initializes popovers
-  initPopovers(){ 
-      $(document).ready(function(){
-        $('[data-toggle="popover"]').popover({
-            placement : 'left',
-            trigger : 'hover'
-        });
-      });
-      
-      $("#saveBtn").attr('visible', 'false');
 
+  // Checks for empty fields in form and adds the inputs to a lists
+  checkForm(){
+    for(var i = 0; i < this.columns.length; i++){
+      if(this.userForm.get(this.columns[i]).value == null){
+        this.emptyField = true;
+      }
+      else if(!this.userForm.get(this.columns[i]).value.emptyField){
+        this.emptyField = false;
+      }
     }
+    if(this.emptyField == false){
+      var list:any = [];
+      for(var i = 0; i < this.columns.length; i++){
+        list.push(this.userForm.get(this.columns[i]).value);
+      }
+      this.addProduct(list, 0);
+      this.newProduct = !this.newProduct;
+    }
+  }
 
 
   // Opens form for submiting new product
   newItem():void{
-  this.selectedItem = Object.entries(this.productArray[0]).map(item=>{return [this.productArray[0],""]});
-  this.newProduct = true;
+    this.newProduct = !this.newProduct;
+    this.selectedItem = Object.entries(this.productArray[0]).map(item=>{return [this.productArray[0],""]});
   }
+
 
   // Enables editing of rows
   editItem(){
@@ -114,23 +149,6 @@ export class TableComponent implements OnInit {
         .draw();
   }
 
-  // Creates form
-  userForm = new FormGroup({
-	ID: new FormControl(),
-	Client: new FormControl(),
-	Description: new FormControl(),
-  ArrivalDate: new FormControl()
-  });
-  
-  // Submit button function
-  onFormSubmit(): void {
-    this.addProduct([this.userForm.get('ID').value, this.userForm.get('Client').value, this.userForm.get('Description').value,this.userForm.get('ArrivalDate').value], 0)
-  }
-
-  // Sets a default value for the new product
-  setDefaultValue() { 
-    this.userForm.setValue({ID: 1234, Client: 'Cliente1', Description: 'Grande', ArrivalDate: 'ayer'});
-  }
 
   // Adds new product to the table
   addProduct(list, i){
@@ -138,7 +156,7 @@ export class TableComponent implements OnInit {
     var table = (<HTMLTableElement>document.getElementById('cellerTable'));
 
     var row = table.insertRow(-1);
-    while(i < 4){
+    while(i < this.columns.length){
     var cell = row.insertCell(i);
     cell.innerHTML = list[i];
     i++;

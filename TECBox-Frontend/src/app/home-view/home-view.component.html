@@ -1,16 +1,89 @@
-<h1>Productos</h1>
+<!-- Shows all the products and provides a filter for them -->
 
-<ul *ngIf="products">
-  <li *ngFor="let product of products">
-    <div><img  style="float: right; margin: 0px 0px 15px 15px;" class="size" [src]="product.imagen" id="image"/>
-      <p class="name">{{ product.nombre }}</p>
-      <p class="descripcion"> Descripción: {{ product.descripcion }}</p>
-      <p class="codigo_barras">Código de Barras: {{ product.codigo_barras}}</p>
-      <p class="vendedor">Vendedor: {{ product.vendedor }}</p>
-      <p class="precio_compra">Precio: {{ product.precio_compra }}</p>
-      <p class="impuesto">Impuesto: {{ product.impuesto}}</p>
-      <p class="descuento">Descuento: {{ product.descuento }}</p>
-    </div> 
+<div class="input-icons myContainer">
+  <!-- Buy Button -->
+  <button align="right" class="btn buyBtn" type="button" (click) = "calcPurchaseTotal()"
+  data-toggle="modal" data-target="#cartModal">Comprar</button>
+
+  <!-- Search bar -->
+  <ul>
+  <i class="fa fa-search icon" align="right"></i>
+  <input style="font-size:20px" type="text" name="search" [(ngModel)]="search" placeholder="Buscar..."class="form-control myBar" autocomplete="off">
+  </ul>
+
+
+  <!-- List of products -->
+  <ul *ngIf="products">
+  <li *ngFor="let product of products | filter: search">
+    <div>
+      <p class="name">{{product.nombre}}</p>
+      <p class="description">Descripción: {{product.descripcion}}</p>
+      <img class="size" [src]="product.imagen"/>
+      <p class="description">Precio: {{ product.precio_compra }}$ + {{ product.impuesto*100}}% i.v.</p>
+      <p class="description"> Descuento: {{product.descuento*100}}%</p>
+      <button class="btn myBtn ml-2" type="button" data-toggle="modal" data-target="#confirmModal"
+      (click) = "addToCart([product.precio_compra, product.descuento, product.impuesto], product.nombre)">
+      <i class="fa fa-shopping-cart fa-2x myIcon"></i></button>
+    </div>
   </li>
-</ul>
+  </ul>
+</div>
+
+<!-- Confirmation modal for added to cart -->
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog myModal" role="document">
+        <div class="modal-content">
+        <div class="modal-body">
+          <h4 class="modal-title" id="modal-basic-title">¡Agregado al carrito!</h4>
+        </div>
+        <div class="modal-body">
+          <label >¡Continúe comprando con nosotros!</label>
+        </div>
+        <div class="modal-footer mb-3">
+          <button aria-hidden="true" type="button" class="btn buyBtn2" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Cart list modal, this displays the products added to cart -->
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog myModal" role="document">
+      <div class="modal-content">
+      <div class="modal-body">
+        <h4 class="modal-title" id="modal-basic-title">Lista de compras</h4>
+      </div>
+      <div class="modal-body"  *ngFor="let prod of productArray">
+        <label>{{prod}}</label>
+      </div>
+      <div class="modal-footer mb-3">
+        <label class="myLabel">
+          Total: {{this.totalCost}}
+        </label>
+        <button aria-hidden="true" type="button" class="btn buyBtn2" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Input for tracking a package's location -->
+<div class="container ml-2">
+  <h2 style="font-size:20px">Digite el número de traqueo del paquete</h2>
+
+  <form [formGroup]="userForm">
+      <div class="form-group">
+        <ul>
+          <li>
+            <input formControlName=TrackingID placeholder="123456" type="text">
+            <button (click)=consultPackage() class="btn buyBtn2 ml-1">Buscar</button>
+            <p style="color:red" *ngIf="!isNumber">Debe ingresar un número</p>
+            <p style="color:#194056;">{{this.state}}</p>
+          </li>
+        </ul>
+      </div>
+
+     </form>
+</div>
 

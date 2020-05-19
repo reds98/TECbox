@@ -160,6 +160,7 @@ export class AdminViewComponent implements OnInit {
   selectedItem = null;
   title = 'Seleccione una vista';
 
+  // Changes between different views
   onChageView(cod: string, title: string): void {
     this.selectedItem = null;
     this.items = null;
@@ -172,21 +173,25 @@ export class AdminViewComponent implements OnInit {
       });
   }
 
+  // Adds item
   newItem(): void {
     this.selectedItem = Object.entries(this.items[0]).map(item => {
       return [item[0], ''];
     });
   }
 
+  // Deletes item
   deleteItem(selectedItem): void {
     this.items = this.items.filter(item => selectedItem !== item);
     this.selectedItem = null;
   }
 
+  // Selects item
   selectItem(selectedItem) {
     this.selectedItem = Object.entries(selectedItem);
   }
 
+  // Deselects item
   onConfirm() {
     this.selectedItem = null;
   }

@@ -8,6 +8,8 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ReportViewComponent implements OnInit {
 
+  startDate = new Date(2000, 0, 1);
+  finalDate = new Date(2020, 0, 1);
   items;
   data = {
     'gestion_roles': {
@@ -153,6 +155,9 @@ export class ReportViewComponent implements OnInit {
     }
   };
 
+  startDateInput = this.startDate;
+  endDateInput = this.finalDate;
+
   selectedItem = null;
   title = 'Seleccione una vista';
   cod = 0;
@@ -170,5 +175,10 @@ export class ReportViewComponent implements OnInit {
         this.title = 'Roles';
         console.log(data[this.cod]);
       });
+  }
+
+
+  print(prod1, prod2){
+    console.log(prod1, prod2);
   }
 }

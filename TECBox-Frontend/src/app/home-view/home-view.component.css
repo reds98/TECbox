@@ -1,3 +1,6 @@
+/*
+ Stylessheet for home-view component
+*/
 ul {
     list-style-type: none;
     margin: 0;
@@ -6,37 +9,158 @@ ul {
     flex-wrap: wrap;
 }
 
+
 li {
-    background: rgb(238, 238, 238);
+    background: rgb(230, 229, 229);
+    border-radius: 5px;
     padding: 1em;
     margin-right: 10px;
     width: 20%;
-    height: 200px;
+    height: auto;
     margin-bottom: 1em;
     display: flex;
     flex-direction: column;
-    float: left;
 }
 
 p {
-    margin: 0;
+    margin-left: 7%;
+    padding-top: 3px;
     font-size: .8rem;
     flex-grow: 1;
 }
 
 p.name {
+    text-transform: uppercase;
     font-weight: bold;
     font-size: 1.2rem;
 }
 
-.size
-{
-    margin-left:0.3em;
-    width:8em;
-    height:8em;
-    }
+p.description {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    flex-grow: 1;
+}
 
-#image  {
-    float: right;    
-        margin: 0 0 0 15px;
-    }
+.size{
+    max-width: 100%;
+    height: auto;
+}
+
+
+.myBar{
+    width: 35%;
+    height: 35px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.input-icons i { 
+    position: absolute; 
+} 
+
+.input-icons { 
+    width: 100%; 
+    margin-bottom: 10px;
+} 
+
+.icon { 
+    padding: 10px; 
+    min-width: 40px;
+    margin-left: 30%;
+} 
+
+.myIcon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 30%;
+    right: 25%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+} 
+
+.myContainer{
+    position: center;
+    padding: 15px 50px 50px 50px;
+    margin-left: 8%;
+}
+
+.myModal{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.myLabel{
+    font-size: 0.9rem;
+    padding: 5px 70% 5px 5px;
+}
+
+/*
+ Buttons
+*/
+.buyBtn{
+    margin: 15px 50px -55px 76%;
+    color: #FFFFFF;
+    background-color: rgb(72, 103, 109);
+    border: 1px solid rgb(72, 103, 109);
+}
+
+.buyBtn:hover {
+    background-color: #B8D3D9;
+    color: rgb(72, 103, 109);
+}
+
+.buyBtn2{
+    margin-top: 5px;
+    color: #FFFFFF;
+    background-color: rgb(72, 103, 109);
+    border: 1px solid rgb(72, 103, 109);
+}
+
+.buyBtn2:hover {
+    background-color: #B8D3D9;
+    color: rgb(72, 103, 109);
+}
+
+.myBtn{
+    margin-top: -50px;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    float: right;
+    background-color: #B8D3D9;
+    border: 1px solid #B8D3D9;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.myBtn:hover {
+    background-color: #194056;
+    color: #FFFFFF;
+}
+
+.editBtn{
+    color: #FFFFFF;
+    background-color: #3B565B;
+    border: 1px solid #B8D3D9;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.editBtn:hover {
+    background-color: #194056;
+    color: #FFFFFF;
+}
+
+.deleteBtn{
+    color: #FFFFFF;
+    background-color: #931621;
+    border: 1px solid #B8D3D9;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.deleteBtn:hover {
+    background-color: #194056;
+    color: #FFFFFF;
+}
+
