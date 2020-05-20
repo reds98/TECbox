@@ -11,6 +11,7 @@ export class ReportsService {
 
   constructor(private http: HttpClient) { }
 
+  // Assigns the report type requested by the user
   initReport(type){
 
     let parameters = new HttpParams();
@@ -21,7 +22,7 @@ export class ReportsService {
     console.log(type);
   }
 
-  
+  // Gets the report from the server and displays it on a different window
   httpGet(httpParams: HttpParams, httpHeaders: HttpHeaders) {
     const responseType = 'arraybuffer';
     const mediaType = 'application/pdf';
