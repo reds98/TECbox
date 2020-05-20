@@ -34,7 +34,7 @@
         <h2>Detalles</h2>
 
         <form [formGroup]="userForm">
-            <div class="form-group" *ngFor="let attribute of objectKeys(productArray[0])">
+            <div class="form-group" *ngFor="let attribute of columns">
               <input formControlName={{attribute}} placeholder={{attribute}} type="text">
             </div>
         

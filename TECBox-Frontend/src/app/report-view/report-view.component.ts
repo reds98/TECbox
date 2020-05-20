@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReportsService } from 'src/app/report-view/reports.service'
 import {HttpClient} from '@angular/common/http';
 
 @Component({
@@ -7,6 +8,8 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./report-view.component.css']
 })
 export class ReportViewComponent implements OnInit {
+
+  constructor(private reportsService: ReportsService) { }
 
   startDate = new Date(2000, 0, 1);
   finalDate = new Date(2020, 0, 1);
@@ -157,28 +160,32 @@ export class ReportViewComponent implements OnInit {
 
   startDateInput = this.startDate;
   endDateInput = this.finalDate;
+  
+  emptyField = false;
 
-  selectedItem = null;
-  title = 'Seleccione una vista';
-  cod = 0;
+  category="";
+  data:Array<Object> = [
+      {id: "top25", name: "Top 25"},
+      {id: "listadoReparto", name: "Listado de Reparto"},
+      {id: "paquetesEntregados", name: "Paquetes Entregados"}
+  ];
 
-  constructor(private http: HttpClient) {
+  selected(){
+    console.log(this.category)
   }
 
+  generateReport(): void {
+    if(this.category != ""){
+      this.reportsService.initReport(this.category);
+      this.emptyField = false;
+    }
+    else{
+      this.emptyField = true;
+    }
+  }
+
+  
   ngOnInit(): void {
-    this.selectedItem = null;
-    this.items = null;
-    this.title = 'Cargando';
-    this.http.get('api/offices')
-      .subscribe((data) => {
-        this.items = data;
-        this.title = 'Roles';
-        console.log(data[this.cod]);
-      });
   }
 
-
-  print(prod1, prod2){
-    console.log(prod1, prod2);
-  }
 }
