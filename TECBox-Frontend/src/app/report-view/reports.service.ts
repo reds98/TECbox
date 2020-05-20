@@ -11,13 +11,14 @@ export class ReportsService {
 
   constructor(private http: HttpClient) { }
 
-  initReport(){
+  initReport(type){
 
     let parameters = new HttpParams();
     let headers = new HttpHeaders();
 
-    parameters = parameters.set('type', "");
+    parameters = parameters.set('type', type);
     this.httpGet(parameters, headers);
+    console.log(type);
   }
 
   

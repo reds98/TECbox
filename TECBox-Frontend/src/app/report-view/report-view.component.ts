@@ -16,17 +16,33 @@ export class ReportViewComponent implements OnInit {
 
   startDateInput = this.startDate;
   endDateInput = this.finalDate;
+  
+  emptyField = false;
 
-  ngOnInit(): void {
-  }
+  category="";
+  data:Array<Object> = [
+      {id: "top25", name: "Top 25"},
+      {id: "listadoReparto", name: "Listado de Reparto"},
+      {id: "paquetesEntregados", name: "Paquetes Entregados"}
+  ];
 
-
-  print(prod1, prod2){
-    console.log(prod1, prod2);
+  selected(){
+    console.log(this.category)
   }
 
   generateReport(): void {
-    this.reportsService.initReport();
+    if(this.category != ""){
+      this.reportsService.initReport(this.category);
+      this.emptyField = false;
+    }
+    else{
+      this.emptyField = true;
+    }
   }
+
+  
+  ngOnInit(): void {
+  }
+
 }
 
