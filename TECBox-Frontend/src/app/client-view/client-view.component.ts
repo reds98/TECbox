@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientViewService } from 'src/app/client-view/client-view.service'
-
-
+import { LoginViewService } from "../login-view/login-view.service";
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-client-view',
   templateUrl: './client-view.component.html',
@@ -9,7 +9,7 @@ import { ClientViewService } from 'src/app/client-view/client-view.service'
 })
 export class ClientViewComponent implements OnInit {
 
-  constructor(private clientService: ClientViewService) {
+  constructor(private clientService: ClientViewService,private auth:LoginViewService,private router:Router) {
   }
   
   // Attributes
@@ -22,6 +22,11 @@ export class ClientViewComponent implements OnInit {
     this.clientService.getClients()
     .subscribe(data => this.dataParent = data);
     console.log(this.dataParent);
+  }
+  salir(){
+    this.auth.logout();
+    window.location.reload();
+    this.router.navigateByUrl("/client-view");
   }
 
 }
