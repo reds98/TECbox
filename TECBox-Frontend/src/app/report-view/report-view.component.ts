@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReportsService } from 'src/app/report-view/reports.service'
 
 @Component({
   selector: 'app-report-view',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportViewComponent implements OnInit {
   
+
+  constructor(private reportsService: ReportsService) { }
 
   startDate = new Date(2000, 0, 1);
   finalDate = new Date(2020, 0, 1);
@@ -20,6 +23,10 @@ export class ReportViewComponent implements OnInit {
 
   print(prod1, prod2){
     console.log(prod1, prod2);
+  }
+
+  generateReport(): void {
+    this.reportsService.initReport();
   }
 }
 
