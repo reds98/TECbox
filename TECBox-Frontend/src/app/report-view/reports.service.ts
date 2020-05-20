@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ReportsService {
+  /**
+   * This class must provide the protocol required for reports request between server and report view
+   */
 
   private apiUrl = 'http://localhost:8080/api/';
 

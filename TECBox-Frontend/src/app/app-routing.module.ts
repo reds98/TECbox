@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
+/**
+ * Each view is called and assigned a specific path
+ * Then its modules are initialize, this step improve the process that was in charge app.module.
+ */
 const routes: Routes = [
   { path: '', loadChildren: () => import('./home-view/home-view.module').then(m => m.HomeViewModule) },
   { path: 'admin-view', loadChildren: () => import('./admin-view/admin-view.module').then(m => m.AdminViewModule) },

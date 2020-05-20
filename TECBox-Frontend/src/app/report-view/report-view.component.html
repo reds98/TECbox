@@ -23,19 +23,23 @@
         <h1>Seleccione fecha inicial y final de intervalo</h1>
     <mat-form-field class="example-full-width myMat">
       <mat-label>Fecha final</mat-label>
-      <input matInput [matDatepicker]="picker1" [(ngModel)]="endDateInput">
+      <label>
+        <input matInput [matDatepicker]="picker1" [(ngModel)]="endDateInput">
+      </label>
       <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
       <mat-datepicker #picker1 [startAt]="finalDate"></mat-datepicker>
     </mat-form-field>
-    
+
     <!-- Calendario de fecha inicial -->
     <mat-form-field class="example-full-width myMat">
       <mat-label>Fecha de inicio</mat-label>
-      <input matInput [matDatepicker]="picker2" [(ngModel)]="startDateInput">
+      <label>
+        <input matInput [matDatepicker]="picker2" [(ngModel)]="startDateInput">
+      </label>
       <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
       <mat-datepicker #picker2 [startAt]="startDate"></mat-datepicker>
-    </mat-form-field>  
-  
+    </mat-form-field>
+
   </div>
 
 

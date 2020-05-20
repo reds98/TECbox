@@ -2,17 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReportViewRoutingModule } from './report-view-routing.module';
 import { ReportViewComponent } from './report-view.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatDatepickerModule} from "@angular/material/datepicker";
-import {MatInputModule} from "@angular/material/input";
-import {MatNativeDateModule} from "@angular/material/core";
+import { FormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatNativeDateModule} from '@angular/material/core';
 
 
 @NgModule({
@@ -21,17 +16,10 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     CommonModule,
     ReportViewRoutingModule,
     FormsModule,
-    MatIconModule,
     MatFormFieldModule,
+    MatDatepickerModule,
     MatInputModule,
-    MatNativeDateModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatDatepickerModule
+    MatNativeDateModule
   ]
 })
 
