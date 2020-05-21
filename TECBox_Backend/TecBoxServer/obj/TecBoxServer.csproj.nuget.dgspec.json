@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jesica\\Documents\\TEC\\Bases de Datos\\TECbox\\TECBox_Backend\\TecBoxServer\\TecBoxServer.csproj": {}
+    "C:\\Users\\sahid\\Documents\\TECbox\\TECBox_Backend\\TecBoxServer\\TecBoxServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jesica\\Documents\\TEC\\Bases de Datos\\TECbox\\TECBox_Backend\\TecBoxServer\\TecBoxServer.csproj": {
+    "C:\\Users\\sahid\\Documents\\TECbox\\TECBox_Backend\\TecBoxServer\\TecBoxServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jesica\\Documents\\TEC\\Bases de Datos\\TECbox\\TECBox_Backend\\TecBoxServer\\TecBoxServer.csproj",
+        "projectUniqueName": "C:\\Users\\sahid\\Documents\\TECbox\\TECBox_Backend\\TecBoxServer\\TecBoxServer.csproj",
         "projectName": "TecBoxServer",
-        "projectPath": "C:\\Users\\Jesica\\Documents\\TEC\\Bases de Datos\\TECbox\\TECBox_Backend\\TecBoxServer\\TecBoxServer.csproj",
-        "packagesPath": "C:\\Users\\Jesica\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jesica\\Documents\\TEC\\Bases de Datos\\TECbox\\TECBox_Backend\\TecBoxServer\\obj\\",
+        "projectPath": "C:\\Users\\sahid\\Documents\\TECbox\\TECBox_Backend\\TecBoxServer\\TecBoxServer.csproj",
+        "packagesPath": "C:\\Users\\sahid\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sahid\\Documents\\TECbox\\TECBox_Backend\\TecBoxServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jesica\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sahid\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
