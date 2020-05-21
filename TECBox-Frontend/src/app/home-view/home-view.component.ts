@@ -20,6 +20,9 @@ export class HomeViewComponent implements OnInit {
   state;
   totalCost;
   currentUser;
+  packageData;
+  clientData;
+  index = 0;
   userForm = new FormGroup({
     TrackingID: new FormControl()
   });
@@ -28,7 +31,6 @@ export class HomeViewComponent implements OnInit {
   objectValues = Object.values;
   objectKeys = Object.keys;
 
-  dataParent;
 
 
   // Assigns the data received to the dataParent attr
@@ -37,11 +39,13 @@ export class HomeViewComponent implements OnInit {
     this.products = JSON.parse(localStorage.getItem('ProductsData'));
     this.getData("Packages", 'PackageData');
     this.packageData = JSON.parse(localStorage.getItem('PackageData'));
-    console.log(this.packageData);
+    this.getData("clients", 'ClientData');
+    this.clientData = JSON.parse(localStorage.getItem('ClientData'));
+    console.log(this.objectValues(this.clientData[0])[2]);
     this.costDiscTaxArray = [];
     this.productArray = [];
     this.totalCost = 0;
-    this.currentClient = "Homero";
+    this.currentUser = (localStorage.getItem('email'));
   }
 
   getData(type, dataType){
@@ -55,22 +59,34 @@ export class HomeViewComponent implements OnInit {
     });
   }
 
+  checkCurrentUser(userEmail): boolean{
+    var bool = false;
+    console.log("UserEmail: " + userEmail);
+    for(var i = 0; i < this.packageData.length; i++){
+      if(this.currentUser == this.objectValues(this.clientData[i])[2]){
+        console.log("Email: " + this.objectValues(this.clientData[i])[2]);
+        this.index = i;
+        this.consultPackage();
+        break;
+      }
+      else{
+        bool = false;
+        this.state = "Usted no puede acceder a esta información.";
+      }
+    }
+    return bool;
+  }
 
   // Checks if the number provided matches an existing package and returns it's current state
   consultPackage(){
     var value = this.userForm.get('TrackingID').value;
     if(!isNaN(value)){
       this.isNumber = true;
-      if(this.checkCurrentUser(this.currentUser)){
-        for(var i = 0; i < this.packageData.length; i++){
-          if(value == this.objectValues(this.packageData[i])[0]){
-            this.state = "El paquete se encuentra: " + this.objectValues(this.packageData[i])[4];
-            break;
-          }
-          else{
-            this.state = "No se ha encontrado un paquete con el número de traqueo cosultado.";
-          }
-        }
+      if(value == this.objectValues(this.clientData[this.index])[8]){
+        this.state = "El paquete se encuentra: " + this.objectValues(this.packageData[this.index])[4];
+      }
+      else{
+        this.state = "No se ha encontrado un paquete en su cuenta con el número de traqueo cosultado.";
       }
     }
     else{

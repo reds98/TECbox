@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ClientViewService } from 'src/app/client-view/client-view.service'
 import { LoginViewService } from "../login-view/login-view.service";
 import { Router } from "@angular/router";
-import { clientInterface } from './client-interface';
 @Component({
   selector: 'app-client-view',
   templateUrl: './client-view.component.html',
@@ -36,6 +35,7 @@ export class ClientViewComponent implements OnInit {
       let oldData = localStorage.getItem('tableData');
       this.dataParent = data;
       localStorage.setItem('tableData', JSON.stringify(data));
+      localStorage.setItem('ClientData', JSON.stringify(data));
       if(oldData != localStorage.getItem('tableData')){
         location.reload();
       }

@@ -12,8 +12,15 @@ export class ClientViewService {
   constructor(private http: HttpClient) {
   }
 
-  getClients():Observable<any>{
-    return this.http.get(this.url);
+  // Assigns a type to every observable that is received and returns this typified observable.
+  getClients(): Observable<any> {
+    let observable;
+      observable =  this.httpGet<JSON>();
+      return observable;
   }
 
+  // Calls http.get() with the corresponding resource url.
+  private httpGet<T>(): Observable<T> {
+    return this.http.get<T>(this.url);
+}
 }
