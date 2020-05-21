@@ -15,7 +15,7 @@
   <!-- List of products -->
   <ul *ngIf="products">
   <li *ngFor="let product of products | filter: search">
-    <div>
+    <div class="myProducts">
       <p class="name">{{product.name}}</p>
       <p class="description">Descripción: {{product.description}}</p>
       <img class="size" [src]="product.image"/>

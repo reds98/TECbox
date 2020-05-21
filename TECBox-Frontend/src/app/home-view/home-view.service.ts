@@ -7,13 +7,14 @@ import { Observable } from 'rxjs';
 })
 export class HomeViewService {
 
-  private url: string = "http://localhost:53572/api/Products";
+  private url: string = "http://localhost:53572/api/";
 
   constructor(private http: HttpClient) {
   }
 
-  getProducts():Observable<any>{
-    return this.http.get(this.url);
+  getItems(type):Observable<any>{
+    return this.http.get(this.url + type);
   }
+
 
 }

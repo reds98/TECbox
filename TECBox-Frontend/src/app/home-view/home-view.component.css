@@ -15,7 +15,7 @@ li {
     border-radius: 5px;
     padding: 1em;
     margin-right: 10px;
-    width: 20%;
+    width: 18%;
     height: auto;
     margin-bottom: 1em;
     display: flex;
@@ -42,7 +42,7 @@ p.description {
 }
 
 .size{
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
 }
 
@@ -81,9 +81,8 @@ p.description {
 } 
 
 .myContainer{
-    position: center;
-    padding: 15px 50px 50px 50px;
-    margin-left: 8%;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .myModal{
@@ -97,11 +96,15 @@ p.description {
     padding: 5px 70% 5px 5px;
 }
 
+.myProducts{
+    margin-top: 2px;
+}
+
 /*
  Buttons
 */
 .buyBtn{
-    margin: 15px 50px -55px 76%;
+    margin: 15px 50px -55px 85%;
     color: #FFFFFF;
     background-color: rgb(72, 103, 109);
     border: 1px solid rgb(72, 103, 109);
