@@ -26,7 +26,7 @@ export class ReportsService {
   httpGet(httpParams: HttpParams, httpHeaders: HttpHeaders) {
     const responseType = 'arraybuffer';
     const mediaType = 'application/pdf';
-    const url = this.apiUrl + 'report';
+    const url = this.apiUrl + 'reports';
     this.http.get(url, { headers: httpHeaders , params: httpParams , responseType } )
       .subscribe(content => {
         const blob = new Blob([content], {type: mediaType});

@@ -32,6 +32,9 @@ export class TableComponent implements OnInit {
   
   // Runs first
   ngOnInit () {
+    this.data = JSON.parse(localStorage.getItem('tableData'));
+    
+    console.log(this.data);
     this.selectedItem = null;
     this.productArray = null;
     this.productArray = this.data;
