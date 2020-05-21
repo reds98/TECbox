@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule, FormControl, FormGroup} from '@angular/forms';
-import { clientInterface } from '../client-view/client-interface';
 
 declare var $;
 
@@ -28,14 +27,11 @@ export class TableComponent implements OnInit {
 
   // Child attributes
   @Input() columns = null;
-  @Input() data: clientInterface = null;
+  @Input() data = null;
 
   
   // Runs first
   ngOnInit () {
-    this.data = JSON.parse(localStorage.getItem('tableData'));
-    
-    console.log(this.data);
     this.selectedItem = null;
     this.productArray = null;
     this.productArray = this.data;
@@ -45,7 +41,6 @@ export class TableComponent implements OnInit {
     this.deleteItems();
     this.initPopovers();
     this.initForm();
-
     }
 
 

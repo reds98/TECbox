@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { clientInterface } from './client-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,17 +12,8 @@ export class ClientViewService {
   constructor(private http: HttpClient) {
   }
 
-
-// Assigns a type to every observable that is received and returns this typified observable.
-  getClients(): Observable<any> {
-    let observable;
-      observable =  this.httpGet<JSON>();
-      return observable;
-  }
-
-  // Calls http.get() with the corresponding resource url.
-  private httpGet<T>(): Observable<T> {
-    return this.http.get<T>(this.url);
+  getClients():Observable<any>{
+    return this.http.get(this.url);
   }
 
 }

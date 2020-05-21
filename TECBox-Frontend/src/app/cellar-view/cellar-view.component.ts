@@ -30,22 +30,9 @@ export class CellarViewComponent implements OnInit {
   
   // Assigns the data received to the dataParent attr
   ngOnInit(): void {
-    this.getData();
-  }
-
-  getData(){
     this.cellarService.getPackage()
-    .subscribe(data => {
-      let oldData = localStorage.getItem('tableData');
-      this.dataParent = data;
-      console.log(data);
-      console.log(this.dataParent);
-      localStorage.setItem('tableData', JSON.stringify(data));
-      if(oldData != localStorage.getItem('tableData')){
-        location.reload();
-      }
-    });
-    
+    .subscribe(data => this.dataParent = data);
+    console.log(this.dataParent);
   }
 
   // Verifies that the client is consulting a package

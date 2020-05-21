@@ -13,7 +13,6 @@ export class HomeViewComponent implements OnInit {
 
   // Attributes
   products: Object;
-  packageData = [];
   search;
   costDiscTaxArray;
   productArray;
@@ -30,32 +29,57 @@ export class HomeViewComponent implements OnInit {
   objectValues = Object.values;
   objectKeys = Object.keys;
 
+  dataParent;
+
+  packageData = [
+    {
+    "ID": "001",
+    "Cliente": "Homero",
+    "Descripción": "Feo",
+    "Fecha de Entrega": "Hoy",
+    "Estado" : "Listo para entrega",
+    "Distrito" : "UwU",
+    "Ruta" : "[OwO, UwU, opo]",
+    "Descuento" : "10",
+    "Impuesto" : "0"
+  },
+  {    
+    "ID": "002",
+    "Cliente": "Maggie",
+    "Descripción": "Bebe",
+    "Fecha de Entrega": "Dos meses",
+    "Estado":"En sucursal",
+    "Distrito" : "OwO",
+    "Ruta" : "[OwO, Uwu, opo]",
+    "Descuento" : "4",
+    "Impuesto" : "0"
+  },
+  {
+    "ID": "003",
+    "Cliente": "Bart",
+    "Descripción": "Cool",
+    "Fecha de Entrega": "Ayer",
+    "Estado":"En ruta de entrega",
+    "Distrito" : "OwO",
+    "Ruta" : "[OwO, Uwu, opo]",
+    "Descuento" : "0",
+    "Impuesto" : "0"
+  }
+];
 
 
   // Assigns the data received to the dataParent attr
   ngOnInit(): void {
-    this.getData("Products", 'ProductsData');
-    this.products = JSON.parse(localStorage.getItem('ProductsData'));
-    this.getData("Packages", 'PackageData');
-    this.packageData = JSON.parse(localStorage.getItem('PackageData'));
-    console.log(this.packageData);
+    this.products = this.dataParent;
     this.costDiscTaxArray = [];
     this.productArray = [];
     this.totalCost = 0;
-    this.currentClient = "Homero";
-  }
+    this.currentClient = "Homero"
 
-  getData(type, dataType){
-    this.homeService.getItems(type)
-    .subscribe(data => {
-      let oldData = localStorage.getItem(dataType);
-      localStorage.setItem(dataType, JSON.stringify(data));
-      if(oldData != localStorage.getItem(dataType)){
-        location.reload();
-      }
-    });
+    this.homeService.getProducts()
+    .subscribe(data => this.dataParent = data);
+    console.log(this.dataParent);
   }
-
 
   // Checks if the number provided matches an existing package and returns it's current state
   consultPackage(){
