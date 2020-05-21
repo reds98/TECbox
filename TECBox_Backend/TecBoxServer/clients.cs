@@ -15,5 +15,6 @@ namespace TecBoxServer
         public string mobile { get; set;}
         public string delivery_address { get; set; }
         public string user { get; set; }
+        public string packageId { get; set; }
     }
 }

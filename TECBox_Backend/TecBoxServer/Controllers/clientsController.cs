@@ -14,38 +14,41 @@ namespace TecBoxServer.Controllers
         private static List<clients> Glossary = new List<clients> {
             new clients
             {
-                id= "12345678",
-                name= "bob esponja",
-                email="bob@gmail.com",
+                id= "22345678",
+                name= "Sahid",
+                email="sahid.rojas64@gmail.com",
                 locker="123",
-                phone_number="24568586",
-                mobile="85645856",
+                phone_number="24588586",
+                mobile="85646856",
                 delivery_address="Calle Wallaby",
-                user="bobEsponja123",
+                user="bobEsponja122",
+                packageId="112"
 
             },
             new clients
             {
-                id= "12345678",
-                name= "bob esponja",
-                email="bob@gmail.com",
+                id= "12385678",
+                name= "bob esponja2",
+                email="bob2@gmail.com",
                 locker="123",
-                phone_number="24568586",
+                phone_number="29568586",
                 mobile="85645856",
                 delivery_address="Calle Wallaby",
                 user="bobEsponja123",
+                packageId="180909282921"
 
             },
             new clients
             {
-                id= "12345678",
-                name= "bob esponja",
-                email="bob@gmail.com",
+                id= "12347678",
+                name= "bob esponja3",
+                email="bob3@gmail.com",
                 locker="123",
-                phone_number="24568586",
+                phone_number="74568586",
                 mobile="85645856",
                 delivery_address="Calle Wallaby",
-                user="bobEsponja123",
+                user="bobEsponja124",
+                packageId="180909282922"
 
             }
 
