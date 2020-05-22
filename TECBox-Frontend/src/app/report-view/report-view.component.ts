@@ -21,9 +21,9 @@ export class ReportViewComponent implements OnInit {
 
   category="";
   data:Array<Object> = [
-      {id: "top25", name: "Top 25"},
-      {id: "listadoReparto", name: "Listado de Reparto"},
-      {id: "paquetesEntregados", name: "Paquetes Entregados"}
+      {id: "1", name: "Top 25"},
+      {id: "2", name: "Listado de Reparto"},
+      {id: "3", name: "Paquetes Entregados"}
   ];
 
   selected(){
