@@ -6,7 +6,7 @@
         <h1>Seleccione el reporte que desea generar</h1>
         <div *ngIf="emptyField" style="color:red" >Por favor seleccione el tipo de reporte.</div>
         <fieldset class="form-group">
-          <select class="custom-select d-block w-100" id="category" [(ngModel)]="category" (change)="selected()" name="category" required placeholder="d.ff">
+          <select class="custom-select d-block w-100" id="category" [(ngModel)]="category"  name="category" required placeholder="d.ff">
             <option hidden value="" disabled selected>Seleccione una categoría:</option>
             <option *ngFor="let item of data" [value]="item.id">{{item.name}}</option>
           </select>

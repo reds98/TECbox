@@ -12,6 +12,7 @@ export class CellarViewService {
   constructor(private http: HttpClient) {
   }
   
+  // Gets package json from server
   getPackage():Observable<any>{
     return this.http.get(this.url);
   }

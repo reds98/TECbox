@@ -11,6 +11,7 @@ export class ReportViewComponent implements OnInit {
 
   constructor(private reportsService: ReportsService) { }
 
+  // Attributes
   startDate = new Date(2000, 0, 1);
   finalDate = new Date(2020, 0, 1);
 
@@ -26,10 +27,7 @@ export class ReportViewComponent implements OnInit {
       {id: "3", name: "Paquetes Entregados"}
   ];
 
-  selected(){
-    console.log(this.category)
-  }
-
+  // Calls initReport to receive data from server, as long as a type of report has been selected
   generateReport(): void {
     if(this.category != ""){
       this.reportsService.initReport(this.category);

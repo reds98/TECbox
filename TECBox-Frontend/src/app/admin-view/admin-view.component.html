@@ -1,9 +1,10 @@
-<button (click)="onChageView('gestion_roles','Roles')" type="button" class="btn myBtn ml-1">Gestión de roles</button>
-<button (click)="onChageView('gestion_sucursales','Sucursales')" type="button" class="btn myBtn ml-1">Gestión de sucursales</button>
-<button (click)="onChageView('gestion_trabajadores','Trabajadores')" type="button" class="btn myBtn ml-1">Gestión de trabajadores</button>
-<button (click)="onChageView('gestion_vendedores','Vendedores')" type="button" class="btn myBtn ml-1">Gestión de vendedores</button>
-<button (click)="onChageView('gestion_productos','Productos')" type="button" class="btn myBtn ml-1">Gestión de productos</button>
-<button (click)="onChageView('gestion_rutas','Rutas')" type="button" class="btn myBtn ml-1">Gestión de rutas</button>
+<button (click)="getData('roles','RolesData')" type="button" class="btn myBtn ml-1">Gestión de roles</button>
+<button (click)="getData('offices','OfficesData')" type="button" class="btn myBtn ml-1">Gestión de sucursales</button>
+<button (click)="getData('workers','WorkersData')" type="button" class="btn myBtn ml-1">Gestión de trabajadores</button>
+<button (click)="getData('sellers','SellersData')" type="button" class="btn myBtn ml-1">Gestión de vendedores</button>
+<button (click)="getData('products','ProductsData')" type="button" class="btn myBtn ml-1">Gestión de productos</button>
+<button (click)="getData('routes','RoutesData')" type="button" class="btn myBtn ml-1">Gestión de rutas</button>
+
 
 <div class="container">
   <ul class="list-group"  *ngIf="items">
@@ -26,7 +27,7 @@
     <h2>Detalles</h2>
     <div class="form-group" *ngFor="let attr of selectedItem">
       <label for="item1">{{attr[0]}}</label>
-      <input type="text" class="form-control" id="item1" value="{{attr[1]}}">
+      <input type="text" class="form-control" value="{{attr[1]}}">
     </div>
     <button type="button" class="btn myBtn" (click)="onConfirm()"><i class="fas fa-check"></i></button>
     <button type="button" class="btn deleteBtn" (click)="onConfirm()"><i class="fas fa-window-close"></i></button>

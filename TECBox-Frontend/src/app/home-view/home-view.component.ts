@@ -48,6 +48,7 @@ export class HomeViewComponent implements OnInit {
     this.currentUser = (localStorage.getItem('email'));
   }
 
+  // Gets data from server
   getData(type, dataType){
     this.homeService.getItems(type)
     .subscribe(data => {
@@ -59,6 +60,7 @@ export class HomeViewComponent implements OnInit {
     });
   }
 
+  // VErifies that the consult for the packages state is being done by current user on his packages
   checkCurrentUser(userEmail): boolean{
     var bool = false;
     console.log("UserEmail: " + userEmail);

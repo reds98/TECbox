@@ -29,6 +29,7 @@ export class ClientViewComponent implements OnInit {
     this.router.navigateByUrl("/client-view");
   }
 
+  // Gets data from the server and sets localStorage items
   getData(){
     this.clientService.getClients()
     .subscribe(data => {

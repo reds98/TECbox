@@ -14,7 +14,7 @@ namespace TecBoxServer.Controllers
         private static List<routes> Glossary = new List<routes> {
             new routes
             {
-                distrits= "Access Token"
+                distrits= "Cartago"
             },
             new routes
             {
