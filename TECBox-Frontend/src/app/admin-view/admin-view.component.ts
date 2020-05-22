@@ -23,8 +23,9 @@ export class AdminViewComponent implements OnInit {
     },
     'routes': {
     },
-    'app_movil_auth': {},
-    'app_movil_paquetes': {}
+    'app_movil_auth': {'authorized': 'false'},
+    'app_movil_packages': {
+    }
   };
 
   selectedItem = null;
