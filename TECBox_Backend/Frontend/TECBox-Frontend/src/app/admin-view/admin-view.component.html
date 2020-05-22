@@ -1,0 +1,35 @@
+<button (click)="getData('roles','RolesData')" type="button" class="btn myBtn ml-1">Gestión de roles</button>
+<button (click)="getData('offices','OfficesData')" type="button" class="btn myBtn ml-1">Gestión de sucursales</button>
+<button (click)="getData('workers','WorkersData')" type="button" class="btn myBtn ml-1">Gestión de trabajadores</button>
+<button (click)="getData('sellers','SellersData')" type="button" class="btn myBtn ml-1">Gestión de vendedores</button>
+<button (click)="getData('products','ProductsData')" type="button" class="btn myBtn ml-1">Gestión de productos</button>
+<button (click)="getData('routes','RoutesData')" type="button" class="btn myBtn ml-1">Gestión de rutas</button>
+
+
+<div class="container">
+  <ul class="list-group"  *ngIf="items">
+    <li
+      *ngFor="let item of items"
+      class="list-group-item">
+      <div>
+        <button (click)="selectItem(item)" type="button" class="btn editBtn ml-1"><i class="fas fa-edit"></i></button>
+        <button (click)="deleteItem(item)" type="button" class="btn deleteBtn ml-1"><i class="fas fa-trash-alt"></i></button>
+        <div *ngFor="let attribute of objectValues(item)">{{attribute}}</div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div>
+        <button (click)="newItem()" type="button" class="btn myBtn"><i class="fas fa-plus ml-1"></i></button>
+      </div>
+    </li>
+  </ul>
+  <div *ngIf="selectedItem" class="container">
+    <h2>Detalles</h2>
+    <div class="form-group" *ngFor="let attr of selectedItem">
+      <label for="item1">{{attr[0]}}</label>
+      <input type="text" id="item1" class="form-control" value="{{attr[1]}}">
+    </div>
+    <button type="button" class="btn myBtn" (click)="onConfirm()"><i class="fas fa-check"></i></button>
+    <button type="button" class="btn deleteBtn" (click)="onConfirm()"><i class="fas fa-window-close"></i></button>
+  </div>
+</div>

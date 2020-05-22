@@ -1,0 +1,24 @@
+.myMat {
+    margin-top: s50px;
+  }
+
+.myDropDown{
+  background-color: #B8D3D9;
+  border: 1px solid #B8D3D9;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  width: auto;
+  min-height: 35px;
+}
+
+.myBtn{
+  margin-left: 15px;
+  margin-top: 80px;
+  background-color: #B8D3D9;
+  border: 1px solid #B8D3D9;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.myBtn:hover {
+  background-color: #194056;
+  color: #FFFFFF;
+}
