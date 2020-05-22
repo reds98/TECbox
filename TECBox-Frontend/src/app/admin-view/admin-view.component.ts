@@ -29,6 +29,9 @@ export class AdminViewComponent implements OnInit {
 
   selectedItem = null;
   title = 'Seleccione una vista';
+  
+  objectValues = Object.values;
+  objectKeys = Object.keys;
 
 
   // Gets data from the server and sets localStorage items

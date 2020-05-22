@@ -14,7 +14,7 @@
       <div>
         <button (click)="selectItem(item)" type="button" class="btn editBtn ml-1"><i class="fas fa-edit"></i></button>
         <button (click)="deleteItem(item)" type="button" class="btn deleteBtn ml-1"><i class="fas fa-trash-alt"></i></button>
-        {{item['nombre']}}{{item['nombre_completo']}}{{item['distritos']}}
+        <div *ngFor="let attribute of objectValues(item)">{{attribute}}</div>
       </div>
     </li>
     <li class="list-group-item">
@@ -27,7 +27,7 @@
     <h2>Detalles</h2>
     <div class="form-group" *ngFor="let attr of selectedItem">
       <label for="item1">{{attr[0]}}</label>
-      <input type="text" class="form-control" value="{{attr[1]}}">
+      <input type="text" id="item1" class="form-control" value="{{attr[1]}}">
     </div>
     <button type="button" class="btn myBtn" (click)="onConfirm()"><i class="fas fa-check"></i></button>
     <button type="button" class="btn deleteBtn" (click)="onConfirm()"><i class="fas fa-window-close"></i></button>
