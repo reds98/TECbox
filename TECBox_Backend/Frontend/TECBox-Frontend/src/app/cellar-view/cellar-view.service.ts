@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class CellarViewService {
 
-  private url: string = "http://localhost:53572/api/Packages";
-
+  //private url: string = "http://localhost:53572/api/Packages";
+  private url: string = window.location.origin+"/api/Packages";
   constructor(private http: HttpClient) {
   }
   

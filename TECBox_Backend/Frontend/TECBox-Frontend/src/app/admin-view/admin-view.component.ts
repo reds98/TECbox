@@ -40,8 +40,10 @@ export class AdminViewComponent implements OnInit {
     this.selectedItem = null;
     this.items = null;
     this.title = 'Cargando';
-
+    console.log(type)
+    console.log( window.location.origin)
     this.adminService.getItems(type)
+    
     .subscribe(data => {
       let oldData = localStorage.getItem(dataType);
       localStorage.setItem(dataType, JSON.stringify(data));

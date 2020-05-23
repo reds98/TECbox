@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class ClientViewService {
 
-  private url: string = "http://localhost:53572/api/clients";
-
+  //private url: string = "http://localhost:53572/api/clients";
+  private url: string = window.location.origin;
   constructor(private http: HttpClient) {
   }
 
@@ -21,6 +21,6 @@ export class ClientViewService {
 
   // Calls http.get() with the corresponding resource url.
   private httpGet<T>(): Observable<T> {
-    return this.http.get<T>(this.url);
+    return this.http.get<T>(this.url+"/api/clients");
   }
 }

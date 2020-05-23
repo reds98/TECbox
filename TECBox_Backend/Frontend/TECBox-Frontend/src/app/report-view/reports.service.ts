@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class ReportsService {
 
-  private apiUrl = 'http://localhost:53572/api/reports/';
-
+  //private apiUrl = 'http://localhost:53572/api/reports/';
+  private apiUrl: string = window.location.origin+"/api/reports/";
   constructor(private http: HttpClient) { }
 
   // Assigns the report type requested by the user

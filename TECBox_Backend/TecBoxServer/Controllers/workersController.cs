@@ -14,31 +14,31 @@ namespace TecBoxServer.Controllers
         private static List<workers> Glossary = new List<workers> {
             new workers
             {
-                name= "Access Token",
-                birth_date="Pistola",
-                admission_date="1001001001001",
-                branch_number="Juancho",
-                monthly_salary="2992",
-                hourly_salary="10%",
+                name= "Manuel de Jesus",
+                birth_date="20/02/2000",
+                admission_date="18/02/2019",
+                branch_number="sucursal1",
+                monthly_salary="300000",
+                hourly_salary="2$",
 
             },
             new workers
             {
-                name= "Access Token",
-                birth_date="Pistola",
-                admission_date="1001001001001",
-                branch_number="Juancho",
-                monthly_salary="2992",
-                hourly_salary="10%",
+                name= "Firulais de Jesus",
+                birth_date="18/02/2000",
+                admission_date="10/02/2019",
+                branch_number="sucursal2",
+                monthly_salary="400000",
+                hourly_salary="2$",
             },
             new workers
             {
-                name= "Access Token",
-                birth_date="Pistola",
-                admission_date="1001001001001",
-                branch_number="Juancho",
-                monthly_salary="2992",
-                hourly_salary="10%",
+                name= "Francisco de Jesus",
+                birth_date="05/02/2000",
+                admission_date="05/02/2019",
+                branch_number="sucursal3",
+                monthly_salary="500000",
+                hourly_salary="2$",
             }
 
         };

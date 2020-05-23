@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class AdminViewService {
 
-  private url: string = "http://localhost:53572/api/";
-
+  //private url: string = "http://localhost:53572/api/";
+  private url: string = window.location.origin+"/api/";
   constructor(private http: HttpClient) {
   }
 
@@ -21,6 +21,7 @@ export class AdminViewService {
 
   // Calls http.get() with the corresponding resource url.
   private httpGet<T>(type): Observable<T> {
+    console.log(this.url + type)
     return this.http.get<T>(this.url + type);
   }
 }

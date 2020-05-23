@@ -11,34 +11,33 @@ namespace TecBoxServer.Controllers
     [ApiController]
     public class officesController : ControllerBase
     {
-        private static List<workers> Glossary = new List<workers> {
-            new workers
+        private static List<offices> Glossary = new List<offices> {
+            new offices
             {
-                name= "Access Token",
-                birth_date="Pistola",
-                admission_date="1001001001001",
-                branch_number="Juancho",
-                monthly_salary="2992",
-                hourly_salary="10%",
+                name= "sucursal1",
+                province="cartago",
+                distrit="central",
+                phone_number="88811629",
+                manager="Sahid"
 
             },
-            new workers
+            new offices
             {
-                name= "Access Token",
-                birth_date="Pistola",
-                admission_date="1001001001001",
-                branch_number="Juancho",
-                monthly_salary="2992",
-                hourly_salary="10%",
+                name= "sucursal2",
+                province="san jose",
+                distrit="central",
+                phone_number="83183086",
+                manager="Ruben  Doblas"
+
             },
-            new workers
+            new offices
             {
-                name= "Access Token",
-                birth_date="Pistola",
-                admission_date="1001001001001",
-                branch_number="Juancho",
-                monthly_salary="2992",
-                hourly_salary="10%",
+                name= "sucursal3",
+                province="Alajuela",
+                distrit="Centro",
+                phone_number="66688125",
+                manager="La Roca"
+
             }
 
         };

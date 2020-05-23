@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class HomeViewService {
 
-  private url: string = "http://localhost:53572/api/";
-
+  //private url: string = "http://localhost:53572/api/";
+  private url: string = window.location.origin+"/api/";
   constructor(private http: HttpClient) {
   }
 
