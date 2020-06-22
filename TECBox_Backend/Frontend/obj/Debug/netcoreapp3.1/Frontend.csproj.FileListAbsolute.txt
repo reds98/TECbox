@@ -1,0 +1,5 @@
+C:\Users\sahid\Documents\Code\TECbox\TECBox_Backend\Frontend\obj\Debug\netcoreapp3.1\Frontend.csprojAssemblyReference.cache
+C:\Users\sahid\Documents\Code\TECbox\TECBox_Backend\Frontend\obj\Debug\netcoreapp3.1\Frontend.AssemblyInfoInputs.cache
+C:\Users\sahid\Documents\Code\TECbox\TECBox_Backend\Frontend\obj\Debug\netcoreapp3.1\Frontend.AssemblyInfo.cs
+C:\Users\sahid\Documents\Code\TECbox\TECBox_Backend\Frontend\obj\Debug\netcoreapp3.1\Frontend.csproj.CoreCompileInputs.cache
+C:\Users\sahid\Documents\Code\TECbox\TECBox_Backend\Frontend\obj\Debug\netcoreapp3.1\Frontend.MvcApplicationPartsAssemblyInfo.cache
